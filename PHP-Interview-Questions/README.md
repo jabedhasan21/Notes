@@ -8,9 +8,6 @@
   *PEAR (PHP Extension and Application Repository) is a framework and repository for reusable   PHP components. PEAR is a code repository containing all kinds of php code snippets and  libraries.
   PEAR also offers a command-line interface that can be used to automatically install packages.*
 
-  (3).**What is object-oriented programming?**
-  
-  *object-oriented programming (OOP), a style of coding in which related actions are grouped into classes to aid in creating more-compact, effective code.*
 # Resources
 (1). [**Toptal**](http://www.toptal.com/php/interview-questions)
 

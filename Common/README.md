@@ -3,6 +3,10 @@
 
 *REST (REpresentational State Transfer) is a simple stateless architecture that generally runs over HTTP.*
 
+(3).**What is object-oriented programming?**
+
+*object-oriented programming (OOP), a style of coding in which related actions are grouped into classes to aid in creating more-compact, effective code.*
+
 ## Design Patterns
  + [**Gang of Four Design Patterns**](http://c2.com/cgi/wiki?DesignPatternsBook)
 
@@ -14,9 +18,9 @@
 
 (2). **Decorator( structural pattern )**
 
-*Decorator pattern allows a user to add new functionality to an existing object without altering its structure. This pattern acts as a wrapper to existing class.
+Decorator pattern allows a user to add new functionality to an existing object without altering its structure. This pattern acts as a wrapper to existing class.
 
-This pattern creates a decorator class which wraps the original class and provides additional functionality keeping class methods signature intact.*
+This pattern creates a decorator class which wraps the original class and provides additional functionality keeping class methods signature intact.
 
 
 (3). **Observer( behavioral pattern )**
