@@ -3,56 +3,41 @@
 
 *REST (REpresentational State Transfer) is a simple stateless architecture that generally runs over HTTP.*
 
-(3).**What is object-oriented programming?**
+(2).**What is object-oriented programming?**
 
 *object-oriented programming (OOP), a style of coding in which related actions are grouped into classes to aid in creating more-compact, effective code.*
 
-## Design Patterns
- + [**Gang of Four Design Patterns**](http://c2.com/cgi/wiki?DesignPatternsBook)
+(3). **What is SQL Injection (SQLi)?**
 
- + [**TutorialsPoint**](http://www.tutorialspoint.com/design_pattern/observer_pattern.htm)
+SQL injection is a code injection technique, used to attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker).
 
-(1). **Singleton( creational pattern )**
+(4). **Inclusion Vulnerabilities: LFI and RFI**
 
-*This pattern involves a single class which is responsible to create an object while making sure that only single object gets created. This class provides a way to access its only object which can be accessed directly without need to instantiate the object of the class.*
++ Remote File Inclusion (RFI) attack.
++ Local File Inclusion (LFI) is similar to a Remote File Inclusion vulnerability.
 
-(2). **Decorator( structural pattern )**
+File inclusion vulnerability is a type of vulnerability most often found on websites. It allows an attacker to include a file, usually through a script on the web server. The vulnerability occurs due to the use of user-supplied input without proper validation. This can lead to something as minimal as outputting the contents of the file or more serious events such as:
++ Code execution on the web server
++ Code execution on the client-side such as  JavaScript which can lead to other attacks such as cross site scripting (XSS)
++ Denial of service (DoS)
++ Data theft/manipulation
 
-Decorator pattern allows a user to add new functionality to an existing object without altering its structure. This pattern acts as a wrapper to existing class.
+(5). **What is a csrf token ? what is it's importance and how does it work?**
 
-This pattern creates a decorator class which wraps the original class and provides additional functionality keeping class methods signature intact.
+*Cross-Site Request Forgery (CSRF or XSRF) attack.*
 
+Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malicious Web site, email, blog, instant message, or program causes a user’s Web browser to perform an unwanted action on a trusted site for which the user is currently authenticated.
 
-(3). **Observer( behavioral pattern )**
+For example, this attack could result in a transfer of funds, changing a password, or purchasing an item in the user's context. In effect, CSRF attacks are used by an attacker to make a target system perform a function (funds Transfer, form submission etc.) via the target's browser without knowledge of the target user, at least until the unauthorized function has been committed.
 
-*Observer pattern is used when there is one-to-many relationship between objects such as if one object is modified, its depenedent objects are to be notified automatically.*
+(6) **Brute Force**
 
-(4). **Strategy( behavior pattern )**
+If you just want to get to the other side of a wall and don’t care how much noise you make, you can always use a machine gun to shoot bullets at it until there is nothing left, eventually the wall will fall and you can walk through unencumbered. That method is not unlike a Brute Force attack.
 
-*In Strategy pattern, a class behavior or its algorithm can be changed at run time.*
+If there’s a form used to log in, then it’s possible to set up specialized scripts that continuously try different username and password combinations until a match is discovered, and the attacker gains access. This could be a brief attack, designed to check if the user has a weak password, and may only check the top 10 or top 100 most common passwords. It could also be a long-term targeted attack composed of lists of millions of passwords to try, and all the time in the world to wait for the right password to work.
 
-(5). **Adapter( structural pattern )**
+More sophisticated Brute Force attacks compile password lists from keywords available on your website to test on your administrator login forms. The best way to protect yourself is by always using strong, unique passwords and supplementing your access control with Two Factor authentication.
 
-*Adapter pattern works as a bridge between two incompatible interfaces.This pattern combines the capability of two independent interfaces.*
+(7).**Denial-of-service(DoS) and Distributed denial-of-service (DDoS) attack**
 
-(6). **Factory( creational pattern )**
-
-This pattern provides one of the best ways to create an object.
-
-In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
-
-(7). **Abstract Factory( creational pattern )**
-
-Abstract Factory patterns work around a super-factory which creates other factories. This factory is also called as factory of factories.
-
-This pattern provides one of the best ways to create an object.
-
-In Abstract Factory pattern an interface is responsible for creating a factory of related objects without explicitly specifying their classes. Each generated factory can give the objects as per the Factory pattern.
-
-(8). **Facade ( structural pattern )**
-
-Facade pattern hides the complexities of the system and provides an interface to the client using which the client can access the system.
-
- This pattern adds an interface to existing system to hide its complexities.
-
- This pattern involves a single class which provides simplified methods required by client and delegates calls to methods of existing system classes.
+In computing, a denial-of-service (DoS) attack is an attempt to make a machine or network resource unavailable to its intended users, such as to temporarily or indefinitely interrupt or suspend services of a host connected to the Internet. A distributed denial-of-service (DDoS) is where the attack source is more than one–and often thousands–of unique IP addresses.
