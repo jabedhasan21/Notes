@@ -41,8 +41,15 @@ This pattern provides one of the best ways to create an object.
 
 In Factory pattern, we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
 
+(7). **Abstract Factory( creational pattern )**
 
-(7). **Facade ( structural pattern )**
+Abstract Factory patterns work around a super-factory which creates other factories. This factory is also called as factory of factories.
+
+This pattern provides one of the best ways to create an object.
+
+In Abstract Factory pattern an interface is responsible for creating a factory of related objects without explicitly specifying their classes. Each generated factory can give the objects as per the Factory pattern.
+
+(8). **Facade ( structural pattern )**
 
 Facade pattern hides the complexities of the system and provides an interface to the client using which the client can access the system.
 
