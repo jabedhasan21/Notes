@@ -72,3 +72,45 @@ You can think of objects as named containers for values, and functions as proced
 + other operators, JavaScript does not convert numeric values to strings.
 
 #### Literals
++ A literal is a notation for representing a fixed value in source code.
++ These are fixed values, not variables, that you literally provide in your script.
+
++ **Array literals :** An array literal is a type of object initializer.
+
+  - If you put two commas in a row, the array is created with undefined for the unspecified elements.
+  - If you include a trailing comma at the end of the list of elements, the comma is ignored.
+
+
++ **Boolean literals :** The Boolean type has two literal values: true and false.
+
+  - The Boolean object is a wrapper around the primitive Boolean data type.
+
+
+
++ **Object literals**
+
+  - Object property names can be any string, including the empty string.
+
+  - If the property name would not be a valid JavaScript identifier, it must be enclosed in quotes.
+
+  - Property names that would not be valid identifiers also cannot be accessed as a dot (.) property, but can be accessed and set with the array-like notation("[]").
+
+  - Please note
+
+    var foo = {a: "alpha", 2: "two"};
+
+    console.log(foo.a);    // alpha
+
+    console.log(foo[2]);   // two
+
+    //console.log(foo.2);  // Error: missing ) after argument list
+
+    //console.log(foo[a]); // Error: a is not defined
+
+    console.log(foo["a"]); // alpha
+
+    console.log(foo["2"]); // two
+
++ **String literals**
+
+You can call any of the methods of the String object on a string literal value—JavaScript automatically converts the string literal to a temporary String object, calls the method, then discards the temporary String object.
