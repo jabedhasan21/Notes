@@ -114,3 +114,35 @@ You can think of objects as named containers for values, and functions as proced
 + **String literals**
 
 You can call any of the methods of the String object on a string literal value—JavaScript automatically converts the string literal to a temporary String object, calls the method, then discards the temporary String object.
+
+
+## Control flow and error handling
+
++ The following values will evaluate to false:
+
+  - false
+  - undefined
+  - null
+  - 0
+  - NaN
+  - the empty string ("")
+
+All other values, including all objects evaluate to true when passed to a conditional statement.
+
+
++ **Promises**
+
+ Promise objects allowing you to control the flow of deferred and asynchronous operations.
+
+ A Promise is in one of these states:
+
+    - pending: initial state, not fulfilled or rejected.
+    - fulfilled: successful operation
+    - rejected: failed operation.
+    - settled: the Promise is either fulfilled or rejected, but not pending.
+
+
+## Loops and iteration
+
++ for...in statement
++ for...of statement
