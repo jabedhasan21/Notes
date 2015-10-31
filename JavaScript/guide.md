@@ -117,4 +117,38 @@ All objects in JavaScript inherit from at least one other object.
 #### Defining properties for an object type
 
 #### Defining methods
-START
+
++ A method is a function associated with an object.
++ or, simply put, a method is a property of an object that is a function.
++ Methods are defined the way normal functions are defined, except that they have to be assigned as the property of an object.
+
+```
+function pretty_print(result){
+    console.log(result);
+}
+function displayCar() {
+  var result = "A Beautiful " + this.year + " " + this.make
+    + " " + this.model+". & "+this.owner.name+" is using";
+  pretty_print(result);
+}
+
+function Person(name, age, sex) {
+  this.name = name;
+  this.age = age;
+  this.sex = sex;
+}
+
+function Car(make, model, year, owner) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.owner = owner;
+  this.displayCar = displayCar;
+}
+
+var rand = new Person("Rand McKinnon", 33, "M");
+var car1 = new Car("Eagle", "Talon TSi", 1993, rand);
+car1.displayCar();
+```
+
+#### Using this for object references
