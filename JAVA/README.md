@@ -68,6 +68,7 @@ The product of the given numbers:200
 ```
 
 
+
 # Abstraction
 
 + Object oriented programming Abstraction is a process process of hiding the implementation details from the user, only the functionality will be provided to the user.
