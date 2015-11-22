@@ -110,7 +110,7 @@ public class AbstractDemo
 {
    public static void main(String [] args)
    {
-      Salary s = new Salary("Mohd Mohtashim", "Ambehta, UP", 3, 3600.00);
+      Salary s = new Salary("Mr Foo", "Ambehta, UP", 3, 3600.00);
       Employee e = new Salary("John Adams", "Boston, MA", 2, 2400.00);
 
       System.out.println("Call mailCheck using Salary reference --");
@@ -134,8 +134,48 @@ Within mailCheck of Salary class
 ailing check to John Adams with salary 2400.
 ```
 
+#### Abstract Methods:
+ + abstract keyword is used to declare the method as abstract.
+ + You have to place the abstract keyword before the method name in the method declaration.
+ + An abstract method contains a method signature, but no method body.
 
+ + Instead of curly braces an abstract method will have a semoi colon ( ; ) at the end.
 
+ Below given is an example of the abstract method.
+
+```
+public abstract class Employee
+{
+   private String name;
+   private String address;
+   private int number;
+
+   public abstract double computePay();
+
+   //Remainder of class definition
+}
+```
+
+Declaring a method as abstract has two consequences:
+  + The class containing it must be declared as abstract.
+  + Any class inheriting the current class must either override the abstract method or declare itself as abstract.
+
+Suppose Salary class is inherits the Employee class, then it should implement the computePay() method as shown below:
+
+```
+public class Salary extends Employee
+{
+   private double salary; // Annual salary
+
+   public double computePay()
+   {
+      System.out.println("Computing salary pay for " + getName());
+      return salary/52;
+   }
+
+   //Remainder of class definition
+}
+```
 
 
 
