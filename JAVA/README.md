@@ -8,6 +8,65 @@ What are the principle conscepts od OOPS?
     + Inheritance
     + Encapsulation.
 
+# Inheritance
+Inheritance can be defined as the process where one class acquires the properties (methods and fields) of another. With the use of inheritance the information is made manageable in a hierarchical order.
+ + The class which inherits the properties of other is known as subclass (derived class, child class)
+ + The class whose properties are inherited is known as superclass (base class, parent class).
+
+#### extends Keyword
+extends is the keyword used to inherit the properties of a class. Below given is the syntax of extends keyword.
+```
+class Super{
+.....
+.....
+}
+
+class Sub extends Super{
+.....
+.....
+
+}
+```
+
+Sample Code
+```
+class Calculation{
+   int z;
+   public void addition(int x, int y){
+      z=x+y;
+      System.out.println("The sum of the given numbers:"+z);
+   }
+   public void Substraction(int x,int y){
+      z=x-y;
+      System.out.println("The difference between the given numbers:"+z);
+   }
+
+}
+
+public class My_Calculation extends Calculation{
+
+   public void multiplication(int x, int y){
+      z=x*y;
+      System.out.println("The product of the given numbers:"+z);
+   }
+   public static void main(String args[]){
+      int a=20, b=10;
+      My_Calculation demo = new My_Calculation();
+      demo.addition(a, b);
+      demo.Substraction(a, b);
+      demo.multiplication(a, b);
+
+   }
+
+}
+```
+After executing the program it will produce the following result.
+```
+The sum of the given numbers:30
+The difference between the given numbers:10
+The product of the given numbers:200
+```
+
 
 # Abstraction
 
