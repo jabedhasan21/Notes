@@ -152,3 +152,5 @@ car1.displayCar();
 ```
 
 #### Using this for object references
+#### Defining getters and setters
+START
