@@ -1,4 +1,6 @@
 ## Android Interview Questions
+Q. What is a Service.?
+ +
 (1). **Android Activity Lifecycle.**
 
 (2). **Difference Between Explicit and implicit methods or intent ?**
@@ -219,7 +221,7 @@ Q 33 - How to access the context in android content provider?
 
 Q 34 - What is a thread in android?
   + Independent dis-patchable unit is called a thread
-  
+
 
 # Resources
 (1). [**Toptal**](http://www.toptal.com/android/interview-questions)

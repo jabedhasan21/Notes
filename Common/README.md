@@ -41,3 +41,7 @@ More sophisticated Brute Force attacks compile password lists from keywords avai
 (7).**Denial-of-service(DoS) and Distributed denial-of-service (DDoS) attack**
 
 In computing, a denial-of-service (DoS) attack is an attempt to make a machine or network resource unavailable to its intended users, such as to temporarily or indefinitely interrupt or suspend services of a host connected to the Internet. A distributed denial-of-service (DDoS) is where the attack source is more than one–and often thousands–of unique IP addresses.
+
+(8). **Service-Oriented Architecture (SOA) Definition**.
+
+A service-oriented architecture (SOA) is an architectural pattern in computer software design in which application components provide services to other components via a communications protocol, typically over a network. The principles of service-orientation are independent of any vendor, product or technology.
