@@ -45,3 +45,17 @@ In computing, a denial-of-service (DoS) attack is an attempt to make a machine o
 (8). **Service-Oriented Architecture (SOA) Definition**.
 
 A service-oriented architecture (SOA) is an architectural pattern in computer software design in which application components provide services to other components via a communications protocol, typically over a network. The principles of service-orientation are independent of any vendor, product or technology.
+
+(9). **What is nhibernate?**
+
+  NHibernate is an object-relational mapping (ORM) solution for the Microsoft .NET platform. It provides a framework for mapping an object-oriented domain model to a traditional relational database.
+
+  NHibernate is an ORM (Object Relational Mapper). Its purpose is to map objects in your OO application to tables in a database for persistence.
+
+Why would you need it? Because it can save you from writing a lot of tedious ADO.NET code. Essentially it enhances developer productivity when developing CRUD applications, that is, applications whose main purpose is to Create, Read, Update, and Delete data in a database.
+
+NHibernate is open source, and you need to realise that you are making your application dependent on third party libraries, whose long term goals may diverge from yours.
+
+If you want the productivity of an ORM without introducing this dependency, consider Entity Framework, or Linq2SQL (noting that Linq2SQL locks you into SQL Server).
+
+And finally if you don't need the productivity enhancement of an ORM, and you want absolute control, stick to plain old ADO.NET.
