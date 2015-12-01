@@ -26,3 +26,7 @@
 (1). [Toptal](http://www.toptal.com/c-plus-plus/interview-questions)
 
 (2). [geeksquiz](http://geeksquiz.com/commonly-asked-c-interview-questions-set-1/)
+
+(3). [scanftree](http://scanftree.com/programs/c/)
+
+(4). [a2zinterviews](http://www.a2zinterviews.com/Languages/c++/)
