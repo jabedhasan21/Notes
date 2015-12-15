@@ -13,6 +13,8 @@
 
 A byte usually consists of eight bits. Amounts of computer memory are often expressed in terms of megabytes (1,048,576 bytes) or gigabytes (1,073,741,824 bytes). Our Living Language : The word bit is short for binary digit. A bit consists of one of two values, usually 0 or 1.
 
+
+
 +  Difference between Abstraction and Encapsulation?
 
 # Referances
