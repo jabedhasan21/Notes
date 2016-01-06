@@ -243,3 +243,65 @@ returns [0, 1, 8, 125, 1000].
   }
   ```
  + The arguments of a function are not limited to strings and numbers. You can pass whole objects to a function.
+
+#### Function scope
++ Variables defined inside a function cannot be accessed from anywhere outside the function, because the variable is defined only in the scope of the function.
++ However, a function can access all variables and functions defined inside the scope in which it is defined.
++ In other words, a function defined in the global scope can access all variables defined in the global scope.
++ A function defined inside another function can also access all variables defined in its parent function and any other variable to which the parent function has access.
+
+  ```
+  // The following variables are defined in the global scope
+  var num1 = 20,
+      num2 = 3,
+      name = "Chamahk";
+
+  // This function is defined in the global scope
+  function multiply() {
+    return num1 * num2;
+  }
+
+  multiply(); // Returns 60
+
+  // A nested function example
+  function getScore () {
+    var num1 = 2,
+        num2 = 3;
+
+    function add() {
+      return name + " scored " + (num1 + num2);
+    }
+
+    return add();
+  }
+
+  getScore(); // Returns "Chamahk scored 5"
+  ```
+#### Scope and the function stack
+**Recursion :**
+A function can refer to and call itself. There are three ways for a function to refer to itself:
+ + the function's name
+ + arguments.callee
+ + an in-scope variable that refers to the function
+
+#### Nested functions and closures
++ You can nest a function within a function. The nested (inner) function is private to its containing (outer) function.It also forms a closure.
++ Since a nested function is a closure, this means that a nested function can "inherit" the arguments and variables of its containing function. In other words, the inner function contains the scope of the outer function.
++ To summarize:
+    + The inner function can be accessed only from statements in the outer function.
+    + The inner function forms a closure: the inner function can use the arguments and variables of the outer function, while the outer function cannot use the arguments and variables of the inner function.
++ Since the inner function forms a closure, you can call the outer function and specify arguments for both the outer and inner function:
+  ```
+  function outside(x) {
+    function inside(y) {
+      return x + y;
+    }
+    return inside;
+  }
+  fn_inside = outside(3); // Think of it like: give me a function that adds 3 to whatever you give it
+  result = fn_inside(5); // returns 8
+
+  result1 = outside(3)(5); // returns 8
+  ```
+
+#### Preservation of variables
