@@ -208,18 +208,38 @@ var x = square(4) // x gets the value 16
 
 + Function expressions are convenient when passing a function as an argument to another function. The following example shows a map function being defined and then called with an anonymous function as its first parameter:
 
-```
-function map(f,a) {
-  var result = [], // Create a new Array
-      i;
-  for (i = 0; i != a.length; i++)
-    result[i] = f(a[i]);
-  return result;
-}
-```
+  ```
+  function map(f,a) {
+    var result = [], // Create a new Array
+        i;
+    for (i = 0; i != a.length; i++)
+      result[i] = f(a[i]);
+    return result;
+  }
+  ```
 The following code:
 `map(function(x) {return x * x * x}, [0, 1, 2, 5, 10]);`
 
 returns [0, 1, 8, 125, 1000].
 
 #### Calling functions
++ Defining a function does not execute it.
++ Defining the function simply names the function and specifies what to do when the function is called.
++ Calling the function actually performs the specified actions with the indicated parameters.
++ Functions must be in scope when they are called, but the function declaration can be hoisted (appear below the call in the code), as in this example:
+
+    ```
+    console.log(square(5));
+    /* ... */
+    function square(n) { return n*n }
+    ```
++ The scope of a function is the function in which it is declared, or the entire program if it is declared at the top level.
+
+**Note:** This works only when defining the function using the above syntax (i.e. function funcName(){}). The code below will not work.
+  ```
+  console.log(square(5));
+  square = function (n) {
+    return n * n;
+  }
+  ```
+ + The arguments of a function are not limited to strings and numbers. You can pass whole objects to a function.

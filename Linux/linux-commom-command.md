@@ -7,3 +7,6 @@ sudo kill \`sudo lsof -t -i:9001\`
 or
 
 sudo kill $(sudo lsof -t -i:9001)
+
+### To see the no. of CPU’s
+lscpu
