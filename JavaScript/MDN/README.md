@@ -305,3 +305,133 @@ A function can refer to and call itself. There are three ways for a function to 
   ```
 
 #### Preservation of variables
+ + Notice how x is preserved when inside is returned.
+ + A closure must preserve the arguments and variables in all scopes it references. Since each call provides potentially different arguments, a new closure is created for each call to outside. The memory can be freed only when the returned inside is no longer accessible.
+
++ This is not different from storing references in other objects, but is often less obvious because one does not set the references directly and cannot inspect them.
+
+#### Multiply-nested functions
++ Functions can be multiply-nested, i.e. a function (A) containing a function (B) containing a function (C). Both functions B and C form closures here, so B can access A and C can access B. In addition, since C can access B which can access A, C can also access A.
++ Thus, the closures can contain multiple scopes; they recursively contain the scope of the functions containing it. This is called scope chaining.
++ Consider the following example:
+```
+function A(x) {
+  function B(y) {
+    function C(z) {
+      console.log(x + y + z);
+    }
+    C(3);
+  }
+  B(2);
+}
+A(1); // logs 6 (1 + 2 + 3)
+```
++ The reverse, however, is not true. A cannot access C, because A cannot access any argument or variable of B, which C is a variable of. Thus, C remains private to only B.
+
+#### Name conflicts
++ When two arguments or variables in the scopes of a closure have the same name, there is a name conflict.
++ More inner scopes take precedence, so the inner-most scope takes the highest precedence, while the outer-most scope takes the lowest. This is the scope chain.
++ Consider the following:
+
+  ```
+  function outside() {
+    var x = 10;
+    function inside(x) {
+      return x;
+    }
+    return inside;
+  }
+  result = outside()(20); // returns 20 instead of 10
+  ```
++ The name conflict happens at the statement return x and is between inside's parameter x and outside's variable x. The scope chain here is {inside, outside, global object}. Therefore inside's x takes precedences over outside's x, and 20 (inside's x) is returned instead of 10 (outside's x).
+
+## Closures
++ Closures are one of the most powerful features of JavaScript. JavaScript allows for the nesting of functions and grants the inner function full access to all the variables and functions defined inside the outer function (and all other variables and functions that the outer function has access to). However, the outer function does not have access to the variables and functions defined inside the inner function. This provides a sort of security for the variables of the inner function. Also, since the inner function has access to the scope of the outer function, the variables and functions defined in the outer function will live longer than the outer function itself, if the inner function manages to survive beyond the life of the outer function.
++ A closure is created when the inner function is somehow made available to any scope outside the outer function.
++ There are, however, a number of pitfalls to watch out for when using closures. If an enclosed function defines a variable with the same name as the name of a variable in the outer scope, there is no way to refer to the variable in the outer scope again.
+  ```
+  var createPet = function(name) {  // Outer function defines a variable called "name"
+    return {
+      setName: function(name) {    // Enclosed function also defines a variable called "name"
+        name = name;               // ??? How do we access the "name" defined by the outer function ???
+      }
+    }
+  }
+  ```
++ The magical `this` variable is very tricky in closures. They have to be used carefully, as what this refers to depends completely on where the function was called, rather than where it was defined.
+
+#### Using the arguments object
++ The arguments of a function are maintained in an array-like object. Within a function, you can address the arguments passed to it as follows: `arguments[i]`.
+  ```
+  function myConcat(separator) {
+     var result = "", // initialize list
+         i;
+     // iterate through arguments
+     for (i = 1; i < arguments.length; i++) {
+        result += arguments[i] + separator;
+     }
+     return result;
+  }
+
+  // returns "red, orange, blue, "
+  myConcat(", ", "red", "orange", "blue");
+
+  // returns "elephant; giraffe; lion; cheetah; "
+  myConcat("; ", "elephant", "giraffe", "lion", "cheetah");
+
+  // returns "sage. basil. oregano. pepper. parsley. "
+  myConcat(". ", "sage", "basil", "oregano", "pepper", "parsley");
+  ```
++ **Note:** The `arguments` variable is "array-like", but not an array. It is array-like in that is has a numbered index and a length property. However, it does not possess all of the array-manipulation methods.
+
+## Function parameters
++ Starting with ECMAScript 6, there are `two` new kinds of parameters: `default parameters` and `rest parameters`.
++ Default parameters
+  + Old
+    ```
+    function multiply(a, b) {
+      b = typeof b !== 'undefined' ?  b : 1;
+
+      return a*b;
+    }
+
+    multiply(5); // 5
+    ```
+  + New
+
+    ```
+    function multiply(a, b = 1) {
+      return a*b;
+    }
+
+    multiply(5); // 5
+    ```
++ Rest parameters
+  ```
+  function multiply(multiplier, ...theArgs) {
+    return theArgs.map(x => multiplier * x);
+  }
+
+  var arr = multiply(2, 1, 2, 3);
+  console.log(arr); // [2, 4, 6]
+  ```
+## Arrow functions
++ An arrow function expression (also known as fat arrow function) has a shorter syntax compared to function expressions and lexically binds the this value.
++ Arrow functions are always anonymous.
++ [ES6 In Depth: Arrow functions](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/)
++ Two factors influenced the introduction of arrow functions: `shorter functions` and `lexical this`.
+#### Shorter functions
+In some functional patterns, shorter functions are welcome. Compare:
+  ```
+  var a = [
+    "Hydrogen",
+    "Helium",
+    "Lithium",
+    "Beryl­lium"
+  ];
+
+  var a2 = a.map(function(s){ return s.length });
+
+  var a3 = a.map( s => s.length );
+  ```
+## Lexical this

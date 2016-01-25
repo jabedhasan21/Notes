@@ -1,4 +1,9 @@
 ## Android Interview Questions
+### About Android Framework.
+---
++ The Android Framework is an important aspect of the Android Architecture.
++ Here you can find all the classes and methods that developer would need in order to write applications on the Android Environment.
+
 Q. What is a Service.?
  +
 (1). **Android Activity Lifecycle.**
@@ -222,6 +227,15 @@ Q 33 - How to access the context in android content provider?
 Q 34 - What is a thread in android?
   + Independent dis-patchable unit is called a thread
 
+# 100 Android Questions And Answers
++ ![1](images/1.png)
++ ![2](images/2.png)
++ ![3](images/3.png)
++ ![4](images/4.png)
++ ![5](images/5.png)
++ ![6](images/6.png)
++ ![7](images/7.png)
++ ![8](images/8.png)
 
 # Resources
 (1). [**Toptal**](http://www.toptal.com/android/interview-questions)
@@ -233,3 +247,7 @@ Q 34 - What is a thread in android?
 (4). [**career.guru99**](http://career.guru99.com/50-android-interview-questions-answers/)
 
 (5). [**TutorialsPoint**](http://www.tutorialspoint.com/android/android_interview_questions.htm)
+
+(6). [**Quora**](https://www.quora.com/What-are-some-good-questions-to-test-someones-Android-development-skills)
+
+(7). [**100 Android Questions And Answers**](http://100androidquestionsandanswers.com/)

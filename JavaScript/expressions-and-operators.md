@@ -1,4 +1,20 @@
 #  Expressions and operators
+This chapter describes JavaScript's expressions and operators, including assignment, comparison, arithmetic, bitwise, logical, string, ternary and more.
+#### Operators
+  + Assignment operators
+  + Comparison operators
+  + Arithmetic operators
+  + Bitwise operators
+  + Logical operators
+  + String operators
+  + Conditional (ternary) operator
+  + Comma operator
+  + Unary operators
+  + Relational operator
+
++ Assignment operators
+  + Destructuring assignment
+  
 ### Object initializer
 ---
 + An object initializer is an expression that describes the initialization of an Object.
