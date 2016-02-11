@@ -59,6 +59,9 @@ The above two are forms of containment (hence the parent-child relationships).
 Dependency is a weaker form of relationship and in code terms indicates that a class uses another by parameter or return type.
 
 Dependency is a form of association.
++ [Dependency1](http://php-di.org/doc/getting-started.html)
++ [Dependency2](http://code.tutsplus.com/tutorials/dependency-injection-in-php--net-28146)
++ [Dependency3](http://code.tutsplus.com/tutorials/digging-in-to-laravels-ioc-container--cms-22167)
 
 (10). Difference between association, aggregation and composition?
 
@@ -67,4 +70,9 @@ Dependency is a form of association.
 + **Aggregation** is a specialised form of Association where all objects have their own lifecycle, but there is ownership and child objects can not belong to another parent object. Let’s take an example of Department and teacher. A single teacher can not belong to multiple departments, but if we delete the department teacher object will not be destroyed. We can think about it as a “has-a” relationship.
 
 + **Composition** is again specialised form of Aggregation and we can call this as a “death” relationship. It is a strong type of Aggregation. Child object does not have its lifecycle and if parent object is deleted, all child objects will also be deleted. Let’s take again an example of relationship between House and Rooms. House can contain multiple rooms - there is no independent life of room and any room can not belong to two different houses. If we delete the house - room will automatically be deleted. Let’s take another example relationship between Questions and Options. Single questions can have multiple options and option can not belong to multiple questions. If we delete questions options will automatically be deleted.
-![pic](images/association-aggregation-composition.jpg)
+
+    ![pic](images/association-aggregation-composition.jpg)
+# Installation
+## File Permission
+sudo chmod -R 777 storage/
+sudo chmod -R 777 vendor/
