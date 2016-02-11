@@ -43,3 +43,28 @@ Ans: [**Middleware**](http://searchsoa.techtarget.com/answer/What-are-EAI-tools-
 (7). Dependency Injection in PHP.
 
 Ans: [**Dependency Injection**](http://coderoncode.com/dependency-injection/design-patterns/programming/php/development/2014/01/06/dependency-injection-php.html)
+
+(8) What is Inversion of Control?
+Ans:
++ [IoC](http://stackoverflow.com/questions/3058/what-is-inversion-of-control)
+
+(9). What is the difference between aggregation, composition and dependency?
+
++ **Aggregation** implies a relationship where the child can exist independently of the parent. Example: Class (parent) and Student (child). Delete the Class and the Students still exist.
+
++ **Composition** implies a relationship where the child cannot exist independent of the parent. Example: House (parent) and Room (child). Rooms don't exist separate to a House.
+
+The above two are forms of containment (hence the parent-child relationships).
+
+Dependency is a weaker form of relationship and in code terms indicates that a class uses another by parameter or return type.
+
+Dependency is a form of association.
+
+(10). Difference between association, aggregation and composition?
+
++ **Association** is a relationship where all objects have their own lifecycle and there is no owner. Let’s take an example of Teacher and Student. Multiple students can associate with single teacher and single student can associate with multiple teachers, but there is no ownership between the objects and both have their own lifecycle. Both can create and delete independently.
+
++ **Aggregation** is a specialised form of Association where all objects have their own lifecycle, but there is ownership and child objects can not belong to another parent object. Let’s take an example of Department and teacher. A single teacher can not belong to multiple departments, but if we delete the department teacher object will not be destroyed. We can think about it as a “has-a” relationship.
+
++ **Composition** is again specialised form of Aggregation and we can call this as a “death” relationship. It is a strong type of Aggregation. Child object does not have its lifecycle and if parent object is deleted, all child objects will also be deleted. Let’s take again an example of relationship between House and Rooms. House can contain multiple rooms - there is no independent life of room and any room can not belong to two different houses. If we delete the house - room will automatically be deleted. Let’s take another example relationship between Questions and Options. Single questions can have multiple options and option can not belong to multiple questions. If we delete questions options will automatically be deleted.
+![pic](images/association-aggregation-composition.jpg)
