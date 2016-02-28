@@ -4,6 +4,13 @@
 + The Android Framework is an important aspect of the Android Architecture.
 + Here you can find all the classes and methods that developer would need in order to write applications on the Android Environment.
 
+## Activities, Tasks, and Intents
++ **Activities:** In Android, an activity is an application component that defines a screen of information and all of the associated actions the user can perform. Your app is a collection of activities, consisting of both the activities you create and those you re-use from other apps.
+
++ **Tasks:** A task is the sequence of activities a user follows to accomplish a goal. A single task can make use of activities from just one app, or may draw on activities from a number of different apps.
+
++ **Intents:** An intent is a mechanism for one app to signal it would like another app's assistance in performing an action. An app's activities can indicate which intents they can respond to. For common intents such as "Share", the user may have many apps installed that can fulfill that request.
+
 Q. What is a Service.?
  +
 (1). **Android Activity Lifecycle.**
