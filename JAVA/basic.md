@@ -31,15 +31,17 @@
 
 ### Question
 ---
-+ ###  Can you save a java source file by other name than the class name?
-+ ###  Why java main method is static?
+ + ###  Can you save a java source file by other name than the class name?
+
+ + ###  Why java main method is static?
+
 ----
 ### Difference between JDK, JRE and JVM?
-+ #### JVM( Java Virtual Machine ):
+ + #### JVM( Java Virtual Machine ):
 It is an abstract machine. It is a specification that provides runtime environment in which java bytecode can be executed.
-+ #### JRE( Java Runtime Environment ):
+ + #### JRE( Java Runtime Environment ):
 It is the implementation of JVM. It physically exists. It contains set of libraries + other files that JVM uses at runtime.
-+ #### JDK( Java Development Kit ):
+ + #### JDK( Java Development Kit ):
 It physically exists.It contains JRE + development tools e.g.(javac, java etc).
 
 ### Internal Architecture of JVM?
