@@ -37,11 +37,11 @@
 
 ----
 ### Difference between JDK, JRE and JVM?
- + #### JVM( Java Virtual Machine ):
+ +  **JVM( Java Virtual Machine ):**
 It is an abstract machine. It is a specification that provides runtime environment in which java bytecode can be executed.
- + #### JRE( Java Runtime Environment ):
+ + **JRE( Java Runtime Environment ):**
 It is the implementation of JVM. It physically exists. It contains set of libraries + other files that JVM uses at runtime.
- + #### JDK( Java Development Kit ):
+ + **JDK( Java Development Kit ):**
 It physically exists.It contains JRE + development tools e.g.(javac, java etc).
 
 ### Internal Architecture of JVM?
@@ -59,6 +59,7 @@ It physically exists.It contains JRE + development tools e.g.(javac, java etc).
 
 ### Restrictions for static method?
 + The static method can not use non static data member or call non-static method directly.
+
 ###  Java static block?
 + Is used to initialize the static data member.
 + It is executed before main method at the time of classloading.
