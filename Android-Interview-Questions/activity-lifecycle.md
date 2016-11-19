@@ -292,3 +292,8 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
     mCurrentLevel = savedInstanceState.getInt(STATE_LEVEL);
 }
 ```
+
+
+### Connecting to the Network
+---
++ [HTTPClient](https://developer.android.com/training/basics/network-ops/connecting.html)
