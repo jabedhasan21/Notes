@@ -293,6 +293,8 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
 }
 ```
 
+### Fragments
+[Fragments sample](https://developer.android.com/training/basics/fragments/fragment-ui.html)
 
 ### Connecting to the Network
 ---
