@@ -244,6 +244,12 @@ Q 34 - What is a thread in android?
 + ![7](images/7.png)
 + ![8](images/8.png)
 
+# Material design
+[Material design](https://material.io/guidelines)
+
+# Sign Your App
+[Sign Your App](https://developer.android.com/studio/publish/app-signing.html)
+
 # Resources
 (1). [**Toptal**](http://www.toptal.com/android/interview-questions)
 
