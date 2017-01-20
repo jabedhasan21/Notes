@@ -408,3 +408,7 @@ Encapsulation in Java is a mechanism of wrapping the data (variables) and code a
 - A class can have total control over what is stored in its fields.
 
 - The users of a class do not know how the class stores its data. A class can change the data type of a field and users of the class do not need to change any of their code.
+
+
+## String-is-immutable-what-exactly-is-the-meaning
+ + [immutable](http://stackoverflow.com/questions/8798403/string-is-immutable-what-exactly-is-the-meaning)
