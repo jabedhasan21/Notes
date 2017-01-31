@@ -31,12 +31,41 @@
 + How typeof operator works?
 + What typeof returns for a null value?
 
++ What is a compose method?
+ - [compose](https://gist.github.com/ripter/2786033)
+ - [Code](https://gist.github.com/neftaly/6e11268f1cd230094c81)
+ - Example
+  ```
+      const pipe = (headFn, ...restFns) => (...args) => restFns.reduce(
+        (value, fn) => fn(value),
+        headFn(...args)
+       );
+
+      const compose = (...fns) => pipe(...fns.reverse());
+
+      function text(a) {
+          return 'item: ' + a;
+      }
+
+      function hello(a) {
+          return 'Hello ' + a;
+      }
+
+      var c = compose(text, hello);
+      c('Chris');  // outputs: 'item: Hello Chris'
+
+      // so c looks something like:
+      function c(a) {
+          return text(hello(a));
+      }
+```
+
 + Browser repaint time?
 
   `The browser would like to repaint the screen every 16.6 milliseconds , 60 frame a second is deal.`
 
   `Like the render kind of call is almost like callback in itself. It has to wait the stack is clear.`
-  
+
   `The difference is that the render is given a higher priority  then your callback. Every 16 milliseconds it's going to queue a rend, wait till the stack is clear before it can actually do that render.`
 
 + [The history of “typeof null”]( http://www.2ality.com/2013/10/typeof-null.html)
