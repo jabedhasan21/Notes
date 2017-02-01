@@ -25,9 +25,16 @@
 
   `A callback is a plain JavaScript function passed to some method as an argument or option. Some callbacks are just events, called to give the user a chance to react when a certain state is triggered.`
 
-+ What is closure?
++ [What is closure?](https://developer.mozilla.org/en/docs/Web/JavaScript/Closures)
 
-  `Closures are created whenever a variable that is defined outside the current scope is accessed from within some inner scope.`
+  `Closures are functions that refer to independent (free) variables (variables that are used locally, but defined in an enclosing scope). In other words, these functions 'remember' the environment in which they were created.`
+ - the local variables within a function only exist for the duration of that function's execution.
+ - **A closure is the combination of a function and the lexical environment (or simply "environment") within which that function was declared.**
+ - This has obvious parallels to object oriented programming.
+ - Languages such as Java provide the ability to declare methods private, meaning that they can only be called by other methods in the same class. JavaScript does not provide a native way of doing this, but it is possible to emulate private methods using closures.
+ - Using closures in this way provides a number of benefits that are normally associated with object oriented programming, in particular data hiding and encapsulation.
+ - It is unwise to unnecessarily create functions within other functions if closures are not needed for a particular task, as it will negatively affect script performance both in terms of processing speed and memory consumption.
+
 + How typeof operator works?
 + What typeof returns for a null value?
 
