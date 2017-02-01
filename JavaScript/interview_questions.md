@@ -7,7 +7,13 @@
   `
 + Call Back
 + Promise
-+ generator
++ [Generators?](https://www.youtube.com/watch?v=ategZqxHkz4)
+
+  ```Generators are (kind of) pausable functions in JavaScript. Another word for them is co-routines. They are used (among other things) to manage async operations, and play very well with promises.
+  ```
+  - [1](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/function* )
+  - [2](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Iterators_and_Generators)
+  
 + async awit
 + arrow functions
 + this
