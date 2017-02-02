@@ -6,7 +6,11 @@
   The event loops jos is to look at the stack and look at the task queue.If the stack is empty it takes the first thing on the queue and pushes it on to the stack.
   `
 + Call Back
-+ Promise
++ [Strict mode?](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
+- Strict mode makes several changes to normal JavaScript semantics.
+- First, strict mode eliminates some JavaScript silent errors by changing them to throw errors.
+- Second, strict mode fixes mistakes that make it difficult for JavaScript engines to perform optimizations: strict mode code can sometimes be made to run faster than identical code that's not strict mode.
+- Third, strict mode prohibits some syntax likely to be defined in future versions of ECMAScript.
 + yield?
 ```The yield keyword is used to pause and resume a generator function (function* or legacy generator function).The yield keyword actually returns an IteratorResult object with two properties, value and done. The value property is the result of evaluating the yield expression, and done is false, indicating that the generator function has not fully completed.
 ```
@@ -73,6 +77,14 @@
  - If the Promise is rejected, the await expression throws the rejected value.
 
 + [Arrow functions](https://www.youtube.com/watch?v=6sQDTgOqh-I)
+ - An arrow function expression has a shorter syntax than a function expression and does not bind its own `this, arguments, super, or new.target`. Arrow functions are always anonymous. These function expressions are best suited for non-method functions, and they cannot be used as constructors.
+ - Two factors influenced the introduction of arrow functions: `shorter functions` and `non-binding of this`.
+ - Until arrow functions, every new function defined its own `this` value.
+ - An arrow function does not create its own this context, so this has its original meaning from the enclosing context.
+ - Arrow functions cannot be used as constructors and will throw an error when used with new.
+ - Arrow functions do not have a prototype property.
+ - The `yield` keyword may not be used in an arrow function's body (except when permitted within functions further nested within it). As a consequence, arrow functions cannot be used as `generators`.
++ [Destructuring](https://www.youtube.com/watch?v=PB_d3uBkQPs&index=4&list=PL0zVEGEvSaeHJppaRLrqjeTPnCH6vw-sm)
 + this
 + hosting ( scoping )
 + closer
