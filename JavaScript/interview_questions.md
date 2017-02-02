@@ -7,13 +7,54 @@
   `
 + Call Back
 + Promise
++ yield?
+```The yield keyword is used to pause and resume a generator function (function* or legacy generator function).The yield keyword actually returns an IteratorResult object with two properties, value and done. The value property is the result of evaluating the yield expression, and done is false, indicating that the generator function has not fully completed.
+```
++ yield*?
+ - The yield* expression is used to delegate to another generator or iterable object.
+ - Besides generator objects, yield* can also yield other kinds of iterables, e.g. arrays, strings or arguments objects.
+ - yield* is an expression, not a statement, so it evaluates to a value.
+
 + [Generators?](https://www.youtube.com/watch?v=ategZqxHkz4)
 
-  ```Generators are (kind of) pausable functions in JavaScript. Another word for them is co-routines. They are used (among other things) to manage async operations, and play very well with promises.
-  ```
+  ```Generators are (kind of) pausable functions in JavaScript. Another word for them is co-routines. They are used (among other things) to manage async operations, and play very well with promises. A generator is a special type of function that works as a factory for iterators. A function becomes a generator if it contains one or more yield expressions and if it uses the function* syntax.```
   - [1](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/function* )
   - [2](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Iterators_and_Generators)
-  
+
+  - A value passed to next() will be treated as the result of the last yield expression that paused the generator.
+
+  ```
+    function* fibonacci(){
+      var fn1 = 0;
+      var fn2 = 1;
+      while (true){  
+        var current = fn1;
+        fn1 = fn2;
+        fn2 = current + fn1;
+        var reset = yield current;
+        if (reset){
+            fn1 = 0;
+            fn2 = 1;
+        }
+      }
+    }
+
+    var sequence = fibonacci();
+    console.log(sequence.next().value);     // 0
+    console.log(sequence.next().value);     // 1
+    console.log(sequence.next().value);     // 1
+    console.log(sequence.next().value);     // 2
+    console.log(sequence.next().value);     // 3
+    console.log(sequence.next().value);     // 5
+    console.log(sequence.next().value);     // 8
+    console.log(sequence.next(true).value); // 0
+    console.log(sequence.next().value);     // 1
+    console.log(sequence.next().value);     // 1
+    console.log(sequence.next().value);     // 2
+    ```
+    
+    - You can force a generator to throw an exception by calling its throw() method and passing the exception value it should throw.
+
 + async awit
 + arrow functions
 + this
