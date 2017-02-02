@@ -17,7 +17,7 @@
 
 + [Generators?](https://www.youtube.com/watch?v=ategZqxHkz4)
 
-  ```Generators are (kind of) pausable functions in JavaScript. Another word for them is co-routines. They are used (among other things) to manage async operations, and play very well with promises. A generator is a special type of function that works as a factory for iterators. A function becomes a generator if it contains one or more yield expressions and if it uses the function* syntax.```
+  - Generators are (kind of) pausable functions in JavaScript. Another word for them is co-routines. They are used (among other things) to manage async operations, and play very well with promises. A generator is a special type of function that works as a factory for iterators. A function becomes a generator if it contains one or more yield expressions and if it uses the function* syntax.
   - [1](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/function* )
   - [2](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Iterators_and_Generators)
 
@@ -52,11 +52,27 @@
     console.log(sequence.next().value);     // 1
     console.log(sequence.next().value);     // 2
     ```
-    
+
     - You can force a generator to throw an exception by calling its throw() method and passing the exception value it should throw.
 
-+ async awit
-+ arrow functions
+
++ [Async and Await?](https://www.youtube.com/watch?v=EmTYi3Myntk)
+ - The async function declaration defines an asynchronous function, which returns an `AsyncFunction object`.
+ - The AsyncFunction constructor creates a new async function object. In JavaScript every asynchronous function is actually an `AsyncFunction object`.
+ - Note that AsyncFunction is not a global object.
+ - The `await` operator is used to wait for a Promise returned by an async function.
+ - When an async function is called, it returns a Promise.
+ - An async function can contain an await expression, that pauses the execution of the async function and waits for the passed Promise's resolution, and then resumes the async function's execution and returns the resolved value.
+ - The purpose of async/await functions are  to simplify the behavior of using promises synchronously
+ - async/await is similar to combining generators and promises.
+ - [async_function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+
++ [await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+ - The await operator is used to wait for a Promise returned by an async function.
+ - The await expression causes async function execution to pause, to wait for the Promise's resolution, and to resume the async function execution when the value is resolved. It then returns the resolved value. If the value is not a Promise, it's converted to a resolved Promise.
+ - If the Promise is rejected, the await expression throws the rejected value.
+
++ [Arrow functions](https://www.youtube.com/watch?v=6sQDTgOqh-I)
 + this
 + hosting ( scoping )
 + closer
