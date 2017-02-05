@@ -138,10 +138,39 @@
    console.log(myCat.__proto__)
 
    cat.tailLength = 15
-   
+
    console.log(myCat.__proto__)
    console.log(myCat.tailLength)
   ```
++ [Object.create - Object Creation](https://www.youtube.com/watch?v=CDFN1VatiJA&t=442s&list=PL0zVEGEvSaeHBZFy6Q8731rcwk0Gtuxub&index=6)
+ - The Object.create() method in JavaScript creates a new object with the specified prototype object and properties.
+  - Example
+    ```
+   const cat = {
+       makeSound: function(){
+         console.log(this.sound)
+       }
+    }
+
+    function ObjectCreate(proto){
+      let obj = {}
+      Object.setPrototypeOf(obj,proto)
+      return obj;
+    }
+    //const mark = Object.create(cat)
+    const mark = ObjectCreate(cat)
+    mark.sound = 'wooFFF'
+    mark.makeSound()
+
+    const waffles = Object.create(cat)
+    // or we can do the same thing using ObjectCreate function
+    //const waffles = ObjectCreate(cat)
+    mark.sound = 'moweeeefgdgf'
+    mark.makeSound()
+
+    console.log('Is mark a cat?', cat.isPrototypeOf(mark))
+    console.log('Is waffles a cat?', cat.isPrototypeOf(waffles))
+    ```
 
 # Questions
 + What are disadvantages of using JavaScript?
