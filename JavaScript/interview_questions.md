@@ -121,6 +121,28 @@
    obama.talk()
    ```
 
++ [--proto-- Vs prototype](https://www.youtube.com/watch?v=DqGwxR_0d1M&list=PL0zVEGEvSaeHBZFy6Q8731rcwk0Gtuxub&index=5)
+
+ - We explore the `__proto__` property on JavaScript Objects, and how it relates to the normal prototype.
+ - Basically, the .`__proto__` property points to the object that the current object actually will use when doing lookups on the `prototype chain`,
+ - while ".prototype" only exists on `functions`, in case you want to use those objects as constructors passed to the new keyword.
+ - Example
+
+   ```
+   let cat = {breed: 'munchkin'}
+   let myCat = {name: 'Flyffykins'}
+   Object.setPrototypeOf(myCat, cat)
+
+   console.log(myCat.name)
+   console.log(myCat.breed)
+   console.log(myCat.__proto__)
+
+   cat.tailLength = 15
+   
+   console.log(myCat.__proto__)
+   console.log(myCat.tailLength)
+  ```
+
 # Questions
 + What are disadvantages of using JavaScript?
 + How many types of functions JavaScript supports?
