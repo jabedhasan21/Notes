@@ -88,7 +88,38 @@
 + this
 + hosting ( scoping )
 + closer
-+ prototype chaining
++ [Prototype Chain](https://www.youtube.com/watch?v=Y3zzCY62NYc&list=PL0zVEGEvSaeHBZFy6Q8731rcwk0Gtuxub&index=4)
+
+- what is do the `new` keyword
+   - 1st Create new plain JavaScript object.
+   - 2nd Check the prototype of object and set the prototype to the new created object.
+   - 3rd Call the Object constructor with the `this` and the value if we passed arguments.
+   - 4th return the newly created object.
+   -  Below the example
+
+  ```
+  function Person(saying){
+    this.saying = saying
+  }
+
+  Person.prototype.talk = function(){
+    console.log('I say:', this.saying)
+  }
+
+  let donaldTrump = new Person('I am president of USA.!!')
+   donaldTrump.talk()
+
+   function myOwnNew(constructor){
+      let obj = {}
+      Object.setPrototypeOf(obj, constructor.prototype)
+      let argArray = Array.prototype.slice.apply(arguments)
+      constructor.apply(obj, argArray.slice(1))
+      return obj
+   }
+
+   let obama = myOwnNew(Person, 'I am ex president of USA.!!')
+   obama.talk()
+   ```
 
 # Questions
 + What are disadvantages of using JavaScript?
