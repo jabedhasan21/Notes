@@ -5,7 +5,32 @@
   `
   The event loops jos is to look at the stack and look at the task queue.If the stack is empty it takes the first thing on the queue and pushes it on to the stack.
   `
-+ Call Back
++ [Gentle explanation of 'this' keyword](https://rainsoft.io/gentle-explanation-of-this-in-javascript/)
+
++ [javascript-hoisting-in-details](https://rainsoft.io/javascript-hoisting-in-details/)
++ [hoisting-git](https://github.com/getify/You-Dont-Know-JS/issues/767#issuecomment-227946671)
+
++ [variables hoisting](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/var)
+
+a variable can appear to be used before it's declared. This behavior is called "hoisting"
+
+ - 1.Declared variables are constrained in the execution context in which they are declared. Undeclared variables are always global.
+ - 2.Declared variables are created before any code is executed. Undeclared variables do not exist until the code assigning to them is executed.
+ - 3.Declared variables are a non-configurable property of their execution context (function or global). Undeclared variables are configurable (e.g. can be deleted).
+    ```
+    var a = 1;
+    b = 2;
+    delete this.a; // Throws a TypeError in strict mode. Fails silently otherwise.
+    delete this.b;
+    console.log(a, b); // Throws a ReferenceError.
+    // The 'b' property was deleted and no longer exists.
+    ```
+  - Here, x and y are declared before any code is executed, the assignments occur later. At the time "x = y" is evaluated, y exists so no ReferenceError is thrown and its value is 'undefined'. So, x is assigned the undefined value. Then, y is assigned a value of 'A'. Consequently, after the first line, x === undefined && y === 'A', hence the result.
+  ```
+  var x = y, y = 'A';
+  console.log(x + y); // undefinedA
+  ```
+
 + [Strict mode?](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 - Strict mode makes several changes to normal JavaScript semantics.
 - First, strict mode eliminates some JavaScript silent errors by changing them to throw errors.
@@ -102,7 +127,7 @@
    var o = new Foo();
 
    // JavaScript actually just does
-   
+
    var o = new Object();
     o.[[Prototype]] = Foo.prototype;
     Foo.call(o);
