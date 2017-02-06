@@ -89,8 +89,26 @@
 + hosting ( scoping )
 + closer
 + [Prototype Chain](https://www.youtube.com/watch?v=Y3zzCY62NYc&list=PL0zVEGEvSaeHBZFy6Q8731rcwk0Gtuxub&index=4)
+  - [MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+ - Each object has an internal link to another object called its prototype.That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype. By definition, null has no prototype, and acts as the final link in this `prototype chain`.
+ - While this is often considered to be one of JavaScript's weaknesses, the prototypal inheritance model is in fact more powerful than the classic model.
+ - JavaScript objects have a link to a prototype object.
+ - When an inherited function is executed, the value of `this` points to the inheriting object, not to the prototype object where the function is an own property.
+ - define in prototype is effectively shared by all instances, and you can even later change parts of prototype and have the changes appear in all existing instances, if you wanted to.
 
-- what is do the `new` keyword
+   ```
+   // So, when you call
+
+   var o = new Foo();
+
+   // JavaScript actually just does
+   
+   var o = new Object();
+    o.[[Prototype]] = Foo.prototype;
+    Foo.call(o);
+   ```
++ class keyword
++ what is do the `new` keyword
    - 1st Create new plain JavaScript object.
    - 2nd Check the prototype of object and set the prototype to the new created object.
    - 3rd Call the Object constructor with the `this` and the value if we passed arguments.
