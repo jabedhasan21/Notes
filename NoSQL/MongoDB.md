@@ -31,3 +31,6 @@ Indexes are special data structures, that store a small portion of the data set 
 
 ## Replication
 Replication is the process of synchronizing data across multiple servers.
+
+## Sharding
+Sharding is the process of storing data records across multiple machines.
