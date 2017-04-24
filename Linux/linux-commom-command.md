@@ -1,3 +1,5 @@
+### [Bash Guide](https://github.com/Idnan/bash-guide)
+
 ### See which ports are open
 netstat -ntlp | grep LISTEN
 
@@ -14,6 +16,13 @@ lscpu
 ### Nginx Log
 tail -f /var/log/nginx/* /var/log/php*
 
+### OS Info
++ hostnamectl
++ cat /etc/centos-release
++ cat /etc/redhat-release
+
+### Kernel Versions
+uname -a
 
 ### linux-commands
 ![1](linux-commands.png)
