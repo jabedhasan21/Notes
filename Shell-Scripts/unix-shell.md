@@ -31,6 +31,8 @@
   + **Unsetting Variables:** `unset variable_name`
    - You cannot use the unset command to unset variables that are marked `readonly`.
 
+### Make the script executable: `chmod +x hello-script.sh`
+
 ##### Variable Types
 + Local Variables:
 + Environment Variables:
@@ -48,3 +50,45 @@
 + `$*`: All the arguments are double quoted. If a script receives two arguments, $* is equivalent to $1 $2.
 
 + `$@`: All the arguments are individually double quoted. If a script receives two arguments, $@ is equivalent to $1 $2.
+
++ `$?`: The exit status of the last command executed.
+
++ `$$`: The process number of the current shell. For shell scripts, this is the process ID under which they are executing.
+
++ `$!`: The process number of the last background command.
+
+##### Exit Status:
++ The `$?` variable represents the exit status of the previous command.
++ Return an exit status of `0` if they were `successful`, and `1` if they were `unsuccessful`.
+
+## Arrays
++ example:
+  ```
+  NAME[0]="Hasan"
+  NAME[1]="Md"
+  NAME[2]="Jabed"
+  ```
++ In `ksh` shell, here is the syntax of array initialization.
+
+    `set -A array_name value1 value2 ... valuen`
+
++ In `bash` shell: `array_name = (value1 ... valuen)`
+
+
+# Operators
+### Arithmetic Operators
++ Bourne shell didn't originally have any mechanism to perform simple arithmetic operations but it uses external programs, either `awk` or `expr`.
++ Ex.
+  ```
+  #!/bin/sh
+  val=`expr 2 + 2`
+  echo "Total value : $val"
+  ```
++ The following points need to be considered while using Arithmetic Operators −
+ - There must be spaces between operators and expressions. For example, 2+2 is not correct; it should be written as 2 + 2.
+ - The complete expression should be enclosed between ‘ ‘, called the inverted commas.
+
+ + It is very important to understand that all the conditional expressions should be inside square braces with spaces around them, for example `[ $a == $b ]` is correct whereas, `[$a==$b]` is incorrect.
+
+ ### Relational Operators
+ 
