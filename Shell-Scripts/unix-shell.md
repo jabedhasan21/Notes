@@ -79,16 +79,34 @@
 ### Arithmetic Operators
 + Bourne shell didn't originally have any mechanism to perform simple arithmetic operations but it uses external programs, either `awk` or `expr`.
 + Ex.
-  ```
-  #!/bin/sh
+  ```#!/bin/sh
   val=`expr 2 + 2`
   echo "Total value : $val"
   ```
+
 + The following points need to be considered while using Arithmetic Operators −
  - There must be spaces between operators and expressions. For example, 2+2 is not correct; it should be written as 2 + 2.
  - The complete expression should be enclosed between ‘ ‘, called the inverted commas.
 
  + It is very important to understand that all the conditional expressions should be inside square braces with spaces around them, for example `[ $a == $b ]` is correct whereas, `[$a==$b]` is incorrect.
 
- ### Relational Operators
- 
+### Relational Operators:
+ + `-eq`: Checks if the value of two operands are equal.
+
+ + `-ne`: Checks if the value of two operands are not equal.
+
+ + `-gt`: Checks if the value of `left operand` is greater than the value of `right operand`.
+
+ + `-lt`: Checks if the value of `left operand` is less than the value of `right operand`.
+
+ + `-ge`: Checks if the value of `left operand` is greater than or equal to the value of `right operand`.
+
+ + `-le`: Checks if the value of `left operand` is less than or equal to the value of `right operand`.
+
+### Boolean Operators
++ `!`: This is logical negation. This inverts a true condition into false and vice versa.`	[ ! false ] is true.`
+
++ `-o`: This is logical OR. If one of the operands is true, then the condition becomes true.
+`[ $a -lt 20 -o $b -gt 100 ] is true.`
+
++ `-a`: This is logical AND. If both the operands are true, then the condition becomes true otherwise false.`[ $a -lt 20 -a $b -gt 100 ] is false.`
