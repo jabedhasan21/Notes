@@ -110,3 +110,18 @@
 `[ $a -lt 20 -o $b -gt 100 ] is true.`
 
 + `-a`: This is logical AND. If both the operands are true, then the condition becomes true otherwise false.`[ $a -lt 20 -a $b -gt 100 ] is false.`
+
+### String Operators
++ `=`: Checks if the value of two operands are equal or not. `[ $a = $b ]`
+
++ `!=`: Checks if the value of two operands are equal or not.`[ $a != $b ]`
+
++ `-z`: Checks if the given string operand size is zero; if it is zero length, then it returns true.`[ -z "$a" ]`
+
++ `-n`: Checks if the given string operand size is non-zero; if it is nonzero length, then it returns true. `[ -n "$a" ]`
+
++ `str`: Checks if str is not the empty string; if it is empty, then it returns false.`[ "$a" ]`
+
++ [string check in bash with -z and -n](https://stackoverflow.com/questions/16355213/string-check-in-bash-with-z-and-n)
+
+### File Test Operators
