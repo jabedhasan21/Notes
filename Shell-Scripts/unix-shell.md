@@ -125,3 +125,30 @@
 + [string check in bash with -z and -n](https://stackoverflow.com/questions/16355213/string-check-in-bash-with-z-and-n)
 
 ### File Test Operators
++ `[ -b $file ]`: Checks if file is a `block special` file; if yes, then the condition becomes `true`.
+
++ `-c`: If file is a `character` special file.
+
++ `-d`: If file is a `directory`.
+
++ `-f`: If file is an `ordinary file` as opposed to a directory or special file.
+
++ `-g`: If file has it's set `group ID (SGID) bit` set.
+
++ `-k`: If file has it's `sticky bit` set.
+
++ `-p`: If file is a `named pipe`.
+
++ `-t`: If file `descriptor is open` and associated with a terminal.
+
++ `-u`: If file has it's Set `User ID (SUID) bit` set.
+
++ `-r`:  If file is `readable`.
+
++ `-w`:  If file is `writable`.
+
++ `-x`:  If file is `executable`.
+
++ `-s`:  If file has `size greater than 0`.
+
++ `-e`: if file `exists`.

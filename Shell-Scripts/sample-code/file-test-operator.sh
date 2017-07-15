@@ -1,6 +1,62 @@
 #!/bin/sh
 file="./array.sh"
 
+if [ -b $file ]
+then
+  echo "File is a block special file"
+else
+  echo "File is not a block special file"
+fi
+
+if [ -c $file ]
+then
+  echo "File is a character special file"
+else
+  echo "File is not a character special file"
+fi
+
+if [ -d $file ]
+then
+  echo "File is a directory"
+else
+  echo "File is not a directory"
+fi
+
+if [ -g $file ]
+then
+  echo "File has set it's group ID (SGID) bit"
+else
+  echo "File has not set group ID (SGID) bit"
+fi
+
+if [ -k $file ]
+then
+  echo "File has set it's sticky bit"
+else
+  echo "File has not set sticky bit"
+fi
+
+if [ -p $file ]
+then
+  echo "File is a named pipe"
+else
+  echo "File is not a named pipe"
+fi
+
+if [ -t $file ]
+then
+  echo "File descriptor is open and associated with a terminal"
+else
+  echo "File descriptor is not open and associated with a terminal"
+fi
+
+if [ -u $file ]
+then
+  echo "File has Set it's User ID (SUID) bit"
+else
+  echo "File is not Set it's User ID (SUID) bit"
+fi
+
 if [ -r $file ]
 then
   echo "File has read access"
