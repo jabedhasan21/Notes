@@ -152,3 +152,10 @@
 + `-s`:  If file has `size greater than 0`.
 
 + `-e`: if file `exists`.
+
+### Shell Decision Making
++ Unix Shell supports following forms of `if…else` statement −
+  - `if...fi` statement
+  - `if...else...fi` statement
+  - `if...elif...else...fi` statement
++ `case...esac` Statement
