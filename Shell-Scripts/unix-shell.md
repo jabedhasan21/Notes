@@ -159,3 +159,25 @@
   - `if...else...fi` statement
   - `if...elif...else...fi` statement
 + `case...esac` Statement
+
+### Shell Loop Types
++ while
++ for
++ **until**
+  ```
+  until command
+  do
+   Statement(s) to be executed until command is false
+   done
+  ```
++ **select**: The select loop provides an easy way to create a numbered menu from which users can select options. It is useful when you need to ask the user to choose one or more items from a list of choices.
+  ```
+  select var in word1 word2 ... wordN
+  do
+     Statement(s) to be executed for every word.
+  done
+  ```
+
+  You can change the prompt displayed by the select loop by altering the variable `PS3` as follows −
+
+  $PS3 = "Please make a selection => " ; export PS3
