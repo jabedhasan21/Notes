@@ -185,3 +185,11 @@
   You can change the prompt displayed by the select loop by altering the variable `PS3` as follows −
 
   $PS3 = "Please make a selection => " ; export PS3
+
+### Loop Control
++ The infinite Loop
++ The break Statement: The break command can also be used to exit from a nested loop using this format − `break n`.
+  Here `n` specifies the `nth` enclosing loop to the exit from.
++ The continue statement: Like with the break statement, an integer argument can be given to the continue command to skip commands from nested loops. `continue n`
+
+### Substitution
