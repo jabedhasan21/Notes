@@ -153,6 +153,10 @@
 
 + `-e`: if file `exists`.
 
++ [C Shell Operators](https://www.tutorialspoint.com/unix/unix-c-shell-operators.htm)
+
++ [Korn Shell Operators](https://www.tutorialspoint.com/unix/unix-korn-shell-operators.htm)
+
 ### Shell Decision Making
 + Unix Shell supports following forms of `if…else` statement −
   - `if...fi` statement
