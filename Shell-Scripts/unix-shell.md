@@ -193,3 +193,21 @@
 + The continue statement: Like with the break statement, an integer argument can be given to the continue command to skip commands from nested loops. `continue n`
 
 ### Substitution
++ **What is Substitution?**
+
+  The shell performs substitution when it `encounters an expression` that contains one or more `special characters`.
+
+#### Variable Substitution
+Variable substitution `enables` the shell programmer to `manipulate the value of a variable` based on its `state`.
+
++ `${var}`: Substitute the value of var.
+
++ `${var:-word}`: If var is `null or unset`, word is `substituted` for var. The value of var does not change.
+
++ `${var:+word}`: If var is `set`, word is `substituted` for var. The value of var does not change.
+
++ `${var:=word}`: If var is `null or unset`, var is `set` to the value of word.
+
++ `${var:?message}`: If var is `null or unset`, message is printed to standard error. This `checks that variables are set correctly`.
+
+### Quoting Mechanisms

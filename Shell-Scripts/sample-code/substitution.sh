@@ -13,13 +13,13 @@ echo
 printf "suppress trailing \c newline"
 echo
 
-printf "stackoverflow\rnine"
+printf "carriage return\rnine"
 echo
 
-printf "stackoverflow\nnine"
+printf "This is new line\nnine"
 echo
 
-printf "stackoverflow\fnine\fgreat"
+printf "stackoverflow\fnine\fgreat (form feed)"
 echo
 
 printf "horizontal \t \t \t tab"
