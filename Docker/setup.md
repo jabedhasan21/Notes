@@ -1,5 +1,21 @@
-# Hello World
+# Get started with Docker for Mac
++ **Check versions of Docker Engine, Compose, and Machine**
++ `docker --version`
++ `docker-compose --version`
++ `docker-machine --version`
++ You can check whether you are running experimental mode or not by typing `docker version` on the command line. Experimental mode is listed under `Server` data. If `Experimental` is `true`, then Docker is running in experimental mode, as shown here. (If `false`, Experimental mode is off.)
+
+# Get Started.
+### Part 1: Orientation and setup
++ An `image` is a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.
+
++ A `container` is a runtime instance of an image—what the image becomes in memory when actually executed. It runs completely isolated from the host environment by default, only accessing host files and ports if configured to do so.
+
+### Part 2: Containers
+
+
 ### Dockerfile
+This is the sample php hello world application docker file
   ```
   FROM php:7.0-apache
   COPY src/ /var/www/html/
@@ -26,6 +42,8 @@ The `pull` command fetches the alpine image from the Docker registry and saves i
 + To find out more about a Docker image, run: `docker inspect alpine`
 
 + `docker rm -f b40f99146490` (To removed the running container)
+
++ If you want to stop the webserver, type: `docker stop webserver` and start it again with `docker start webserver`
 
 + You can also search for images directly from the command line using `docker search`.
 
@@ -94,3 +112,7 @@ The `pull` command fetches the alpine image from the Docker registry and saves i
 + [Official repositories on Docker Hub](https://docs.docker.com/docker-hub/official_repos/)
 + [Dockerfile reference commands](https://docs.docker.com/engine/reference/builder/)
 + [Networking](https://github.com/docker/labs/tree/master/networking)
+
++ [Organizations and Teams in Docker Cloud](https://docs.docker.com/docker-cloud/orgs/)
+
++ [Link Amazon Web Services to Docker Cloud](https://docs.docker.com/docker-cloud/cloud-swarm/link-aws-swarm/)
