@@ -69,6 +69,19 @@ The `pull` command fetches the alpine image from the Docker registry and saves i
 
 
 ## Deploying an app to a Swarm
++ create a Swarm:`docker swarm init`
+
++  deploy it: `docker stack deploy --compose-file docker-stack.yml vote`
+
++ To verify your stack has deployed, use `docker stack services vote`
+
++ Remove the stack from the swarm: `docker stack rm vote`
+
+## Container networking on a single Docker host
++ We will use `Docker Machine` to create our test Docker Host. Driver's option is set to virtualbox so the host is created on the local machine as a virtualbox virtual machine.
+`docker-machine create --driver virtualbox node1`
+
++ Get the IP of node1 `docker-machine ip node1` (⇒ 192.168.99.100)
 
 
 
@@ -79,5 +92,5 @@ The `pull` command fetches the alpine image from the Docker registry and saves i
 + [Container Tutorials](http://containertutorials.com/)
 + [Docker Machine](https://github.com/docker/machine)
 + [Official repositories on Docker Hub](https://docs.docker.com/docker-hub/official_repos/)
-
 + [Dockerfile reference commands](https://docs.docker.com/engine/reference/builder/)
++ [Networking](https://github.com/docker/labs/tree/master/networking)
