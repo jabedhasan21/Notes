@@ -12,7 +12,51 @@
 + A `container` is a runtime instance of an image—what the image becomes in memory when actually executed. It runs completely isolated from the host environment by default, only accessing host files and ports if configured to do so.
 
 ### Part 2: Containers
++ Stack:  defining the interactions of all the services
++ Services:  which defines how containers behave in production
++ Container (you are here)
 
++ Run app: `docker run -p 4000:80 application-image-name`
+
++  Run app in the background: `docker run -d -p 4000:80 application-image-name`
+
++ Container is running in the background. You can also see the abbreviated container ID with `docker container ls`
+#### Share your image
++ Log in to the Docker public registry on your local machine:`docker login`
+
++ Tag the image: The notation for associating a local image with a repository on a registry is `username/repository:tag`. The tag is optional, but recommended, since it is the mechanism that registries use to give Docker images a version. Give the repository and tag meaningful names for the context, such as `get-started:part1`. This will put the image in the `get-started` repository and tag it as `part1`.
+
++ `docker tag image username/repository:tag
+`
+
++ Example: `docker tag friendlyhello jabedhasan21/get-started:part1`
+
++ Publish the image: `docker push jabedhasan21/get-started:part1`
+
++ Pull and run the image from the remote repository: `docker run -d -p 4000:80 jabedhasan21/get-started:part1`
+
+Now, put it all together to tag the image. Run docker tag image with your username, repository, and tag names so that the image will upload to your desired destination. The syntax of the command is:
+
+**Here is a list of the basic Docker commands from this page, and some related ones if you’d like to explore a bit before moving on.**
+```
+docker build -t friendlyname .  # Create image using this directory's Dockerfile
+docker run -p 4000:80 friendlyname  # Run "friendlyname" mapping port 4000 to 80
+docker run -d -p 4000:80 friendlyname         # Same thing, but in detached mode
+docker container ls                                # List all running containers
+docker container ls -a             # List all containers, even those not running
+docker container stop <hash>           # Gracefully stop the specified container
+docker container kill <hash>         # Force shutdown of the specified container
+docker container rm <hash>        # Remove specified container from this machine
+docker container rm $(docker container ls -a -q)         # Remove all containers
+docker image ls -a                             # List all images on this machine
+docker image rm <image id>            # Remove specified image from this machine
+docker image rm $(docker image ls -a -q)   # Remove all images from this machine
+docker login             # Log in this CLI session using your Docker credentials
+docker tag <image> username/repository:tag  # Tag <image> for upload to registry
+docker push username/repository:tag            # Upload tagged image to registry
+docker run username/repository:tag                   # Run image from a registry
+```
+### Part 3: Services
 
 ### Dockerfile
 This is the sample php hello world application docker file
