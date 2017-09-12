@@ -146,6 +146,10 @@ A swarm is a group of machines that are running Docker and joined into a cluster
 
 #### Set up your swarm
 
+### Part 5: Stacks
+ + A stack is a group of `interrelated services` that share dependencies, and can be `orchestrated` and `scaled` together.
+ + A single stack is capable of defining and coordinating the functionality of an entire application (though very complex applications may want to use multiple stacks).
+
 ### Dockerfile
 This is the sample php hello world application docker file
   ```
