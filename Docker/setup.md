@@ -138,8 +138,13 @@ docker container ls -q                                      # List container IDs
 docker stack rm <appname>                             # Tear down an application
 ```
 
+###  Part 4: Swarms
+Here in part 4, you deploy this application onto a cluster, running it on multiple machines. Multi-container, multi-machine applications are made possible by joining multiple machines into a “Dockerized” cluster called a swarm.
 
+#### Understanding Swarm clusters
+A swarm is a group of machines that are running Docker and joined into a cluster.
 
+#### Set up your swarm
 
 ### Dockerfile
 This is the sample php hello world application docker file
