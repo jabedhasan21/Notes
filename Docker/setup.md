@@ -57,6 +57,89 @@ docker push username/repository:tag            # Upload tagged image to registry
 docker run username/repository:tag                   # Run image from a registry
 ```
 ### Part 3: Services
+In part 3, we scale our application and enable load-balancing.
+#### Services
+`In a distributed application, different pieces of the app are called “services.”`For example, if you imagine a video sharing site, it probably includes a service for storing application data in a database, a service for video transcoding in the background after a user uploads something, a service for the front-end, and so on.
+
+`Services are really just “containers in production.”` A service only runs one image, but it codifies the way that image runs—what ports it should use, how many replicas of the container should run so the service has the capacity it needs, and so on. Scaling a service changes the number of container instances running that piece of software, assigning more computing resources to the service in the process.
+
+Luckily it’s very easy to define, run, and scale services with the Docker platform – just write a `docker-compose.yml` file.
+
+#### Your first `docker-compose.yml` file
+
+A `docker-compose.yml` file is a YAML file that defines how Docker containers should behave in production.
++  Update this `.yml` by replacing `username/repo:tag` with your image details
+```
+version: "3"
+services:
+  web:
+    # replace username/repo:tag with your name and image details
+    image: username/repository:tag
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - webnet
+networks:
+  webnet:
+```
+
+This `docker-compose.yml` file tells Docker to do the following:
+
++ Pull the image from the registry.
++ Run 5 instances of that image as a service called `web`, limiting each one to use, at most, 10% of the CPU (across all cores), and 50MB of RAM.
++ Immediately restart containers if one fails.
++ Map port 80 on the host to `web`’s port 80.
++ Instruct `web`’s containers to share port 80 via a load-balanced network called `webnet`. (Internally, the containers themselves will publish to `web`’s port 80 at an ephemeral port.)
++ Define the `webnet` network with the default settings (which is a load-balanced overlay network).
+
+#### Run your new load-balanced app
++ Before we can use the `docker stack deploy` command we’ll first run:
+
+    `docker swarm init`
+
++ Now let’s run it. You have to give your app a name. Here, it is set to `getstartedlab`:
+
+  `docker stack deploy -c docker-compose.yml getstartedlab`
+
++ Our `single service` stack is running 5 container instances of our deployed image on one host.
+
++ Let’s investigate.Get the service ID for the one service in our application:`docker service ls`
+
++ Docker swarms run tasks that spawn containers. Tasks have state and their own IDs:`docker service ps <service>`
+
++ Let’s inspect one task and limit the output to container ID: `docker inspect --format='{{.Status.ContainerStatus.ContainerID}}' <task>`
+
++ Vice versa, inspect the container ID, and extract the task ID:`docker inspect --format="{{index .Config.Labels \"com.docker.swarm.task.id\"}}" <container>`
+
++ Now list all 5 containers:`docker container ls -q`
+
++ Take down the app and the swarm: `docker stack rm getstartedlab`
+
++ This removes the app, but our one-node swarm is still up and running (as shown by `docker node ls`).
+
++ Take down the swarm with `docker swarm leave --force`.
+
+Some commands to explore at this stage:
+```
+docker stack ls                                            # List stacks or apps
+docker stack deploy -c <composefile> <appname>  # Run the specified Compose file
+docker service ls                 # List running services associated with an app
+docker service ps <service>                  # List tasks associated with an app
+docker inspect <task or container>                   # Inspect task or container
+docker container ls -q                                      # List container IDs
+docker stack rm <appname>                             # Tear down an application
+```
+
+
+
 
 ### Dockerfile
 This is the sample php hello world application docker file
