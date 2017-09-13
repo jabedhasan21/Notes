@@ -150,6 +150,11 @@ A swarm is a group of machines that are running Docker and joined into a cluster
  + A stack is a group of `interrelated services` that share dependencies, and can be `orchestrated` and `scaled` together.
  + A single stack is capable of defining and coordinating the functionality of an entire application (though very complex applications may want to use multiple stacks).
 
+### Part 6: Deploy your app
+
+
+## Link Amazon Web Services to Docker Cloud
+
 ### Dockerfile
 This is the sample php hello world application docker file
   ```
@@ -172,6 +177,10 @@ The `pull` command fetches the alpine image from the Docker registry and saves i
 + `docker run alpine ls -l` (The Docker daemon creates the container and then runs a command in that container.)
 
 + `docker run -it alpine /bin/sh` (You are now inside the container shell and you can try out a few commands like `ls -l`, `uname -a` and others. Exit out of the container by giving the `exit` command.)
+
++ `-it` – This param tells Docker to run our image and create a psuedo-TTY connected to the container’s stdin as well as create a bash shell. Basically it makes it accessible from the command line like we would normally see running our node app with “npm start” or similar.
+
++ `-–rm` – This param tells Docker to automatically remove the container when it exits. *NOTE*: We cannot combine the –rm and -d flags together.
 
 + `docker ps` ( To see all running container `-a` for all created & running container)
 
@@ -252,3 +261,9 @@ The `pull` command fetches the alpine image from the Docker registry and saves i
 + [Organizations and Teams in Docker Cloud](https://docs.docker.com/docker-cloud/orgs/)
 
 + [Link Amazon Web Services to Docker Cloud](https://docs.docker.com/docker-cloud/cloud-swarm/link-aws-swarm/)
+
++ [Automated Builds with Docker Cloud](https://www.youtube.com/watch?v=sl2mfyjnkXk&feature=youtu.be)
+
++ [Deploy a Node.js and MongoDB Application](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-node-js-and-mongodb-application-with-rancher-on-ubuntu-14-04)
+
++ [Container Management Platform](http://rancher.com/rancher/)
