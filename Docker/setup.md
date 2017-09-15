@@ -163,13 +163,19 @@ This is the sample php hello world application docker file
   EXPOSE 80
   ```
 ### Command
++ [CLI](https://docs.docker.com/engine/reference/commandline/docker/)
+
 + docker build -t hello-world .
+
++ The `-t` flag sets a tag for our image
 
 + docker run -p 9000:80 hello-world
 
 + docker run -p 9000:80 -v /Users/jabed/Documents/demo-docker/src/:/var/www/html/ hello-world
 
 + docker run hello-world (To test docker is working )
+
++ Run with environment variables: `docker run --env-file .env -it --rm -p 9000:3000 mn-api`
 
 + `docker pull alpine` (
 The `pull` command fetches the alpine image from the Docker registry and saves it in our system.)
@@ -189,6 +195,13 @@ The `pull` command fetches the alpine image from the Docker registry and saves i
 + `docker rm -f b40f99146490` (To removed the running container)
 
 + If you want to stop the webserver, type: `docker stop webserver` and start it again with `docker start webserver`
+
+  You can always push a new image to this repository using the CLI
++ `docker tag local-image:tagname new-repo:tagname`
+
++ `docker push new-repo:tagname`
+
++ To know IP addresses of VM: `docker-machine env myvm1`
 
 + You can also search for images directly from the command line using `docker search`.
 
