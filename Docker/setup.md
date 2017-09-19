@@ -162,6 +162,7 @@ This is the sample php hello world application docker file
   COPY src/ /var/www/html/
   EXPOSE 80
   ```
+
 ### Command
 + [CLI](https://docs.docker.com/engine/reference/commandline/docker/)
 
@@ -204,6 +205,10 @@ The `pull` command fetches the alpine image from the Docker registry and saves i
 + To know IP addresses of VM: `docker-machine env myvm1`
 
 + You can also search for images directly from the command line using `docker search`.
+
++ `docker attach` will let you connect to your Docker container, but this isn't really the same thing as  ssh. If your container is running a webserver, for example, `docker attach` will probably connect you to the stdout of the web server process. It won't necessarily give you a shell.
+
++ The `docker exec` command is let you ssh the container ; this will let you run arbitrary commands inside an existing container. For example: `docker exec -it <mycontainer> bash`
 
 
 ## Get Started
@@ -282,3 +287,7 @@ The `pull` command fetches the alpine image from the Docker registry and saves i
 + [Container Management Platform](http://rancher.com/rancher/)
 
 + [Moby](https://github.com/moby/moby)
+
++ [Docker Compose](https://docs.docker.com/compose/)
+
++ [Compose command-line reference](https://docs.docker.com/compose/reference/)
