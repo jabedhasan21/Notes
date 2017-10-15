@@ -210,6 +210,10 @@ The `pull` command fetches the alpine image from the Docker registry and saves i
 
 + The `docker exec` command is let you ssh the container ; this will let you run arbitrary commands inside an existing container. For example: `docker exec -it <mycontainer> bash`
 
++ docker-stack-and-private-registry: `docker stack deploy -c docker-compose.yml --with-registry-auth`
+
++ `docker login -u #DockerHub Username# -p #DockerHub Password# registry.hub.Docker.com/#Organization-Or-DockerHubUserName# && Docker stack deploy -c Docker-swarm.yml #STACK-NAME# --with-registry-auth`
+
 
 ## Get Started
 + [get-started](https://docs.docker.com/get-started/)
@@ -291,3 +295,11 @@ The `pull` command fetches the alpine image from the Docker registry and saves i
 + [Docker Compose](https://docs.docker.com/compose/)
 
 + [Compose command-line reference](https://docs.docker.com/compose/reference/)
+
++ [Deploy your app on Docker for AWS](https://docs.docker.com/docker-for-aws/deploy/)
+
++ [Installing Docker Images from private repositories in Docker Swarm](http://littlebigextra.com/installing-docker-images-private-repositories-docker-swarm/)
+
++ [Register Swarms](https://docs.docker.com/docker-cloud/cloud-swarm/register-swarms/)
+
++ [katacoda courses](https://www.katacoda.com/courses/docker)
