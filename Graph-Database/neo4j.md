@@ -88,3 +88,96 @@
 + Just like nodes, you can also merge the relationships using the MERGE clause.
 
 + `MATCH (a:Country), (b:Tournament) WHERE a.name = "Bangladesh" AND b.name = "ICC Champions Trophy 2013" MERGE (a)-[r:WINNERS_OF]->(b)RETURN a, b`
+
+### Set Clause
++ Using Set clause, you can add `new properties` to an existing Node or Relationship, and also add or `update` existing Properties values.
+
++ `MATCH (node:label{properties . . . . . . . . . . . .. . }) SET node.property = value RETURN node`
+
++ `MATCH (Shakib:player{name: "Shakib Al Hasan", YOB: 1985, POB: "Jessore"}) SET Shakib.highestscore = 137 RETURN Shakib`
+
+#### Removing a Property
++ You can remove an existing property by passing `NULL` as value to it.
+
++ `MATCH (node:label {properties}) SET node.property = NULL RETURN node `
+
++ `MATCH (Shakib:player{name: "Shakib Al Hasan", YOB: 1985, POB: "Jessore"}) SET Shakib.POB = NULL RETURN Shakib`
+
+#### Setting Multiple Properties
++ In the same way, you can create multiple properties in a node using the Set clause. To do so, you need to specify these key value pairs with `commas`.
+
++ `MATCH (node:label {properties}) SET node.property1 = value, node.property2 = value RETURN node`
+
++ `MATCH (Shakib:player {name: "Shakib Al Hasan", YOB: 1985}) SET Shakib.POB = "Jessore", Shakib.HS = 90 RETURN Shakib;`
+
+#### Setting a Label on a Node
++ You can set a label to an existing node using the SET clause.
+
++ `MATCH (n {properties . . . . . . . }) SET n :label RETURN n`
+
++ `CREATE (Subbir {name: "Subbir Rahaman", YOB: 1982, POB: "Rajshahi"})`
+
++ `MATCH (Subbir {name: "Subbir Rahaman", YOB: 1982, POB: "Rajshahi"}) SET Subbir: player RETURN Subbir`
+
+#### Setting Multiple Labels on a Node
++ You can set multiple labels to an existing node using the SET clause. Here you need to specify the labels by separating them with colons `:`.
+
++ `MATCH (n {properties . . . . . . . }) SET n :label1:label2 RETURN n`
+
++ `CREATE (Mahmudullah {name: "Mohammad Mahmudullah Riyad", YOB: 1986, POB: "Dhaka"})`
+
++ `MATCH (plr {name: "Mohammad Mahmudullah Riyad", YOB: 1986, POB: "Dhaka"}) SET plr: player:person RETURN plr`
+
+
+### Delete Clause
++ You can delete `nodes` and `relationships` from a database using the `DELETE` clause.
+
++ Deleting All Nodes and Relationships: `MATCH (n) DETACH DELETE n`.This will delete all the nodes and relationships from your neo4j database and make it empty.
+
+#### Deleting a Particular Node
++ `MATCH (node:label {properties . . . . . . . . . .}) DETACH DELETE node`
+
++ `CREATE (plr:player {name: "Rubel Hossain", YOB: 1990, POB: "Bagerhat"}) RETURN plr;`
+
++ `MATCH (plr:player {name: "Rubel Hossain", YOB: 1990, POB: "Bagerhat"}) DETACH DELETE plr`
+
++ Assuming you're referring to Neo4j's internal node id:
+
++ `MATCH (p:player) where ID(p)=28
+OPTIONAL MATCH (p)-[r]-() //drops p's relations
+DELETE r,p`
+
++ `MATCH(n) WHERE ID(n) = 27 RETURN n;`
+
+### Remove Clause
++ The `REMOVE` clause is used to remove `properties` and `labels` from graph elements (Nodes or Relationships).
+
++ The main difference between Neo4j CQL `DELETE` and `REMOVE` commands is −
+  - `DELETE` operation is used to delete `nodes` and associated `relationships`.
+
+  - `REMOVE` operation is used to remove `labels` and `properties`.
+
+#### Removing a Property
++ `MATCH (node:label{properties . . . . . . . }) REMOVE node.property RETURN node`
+
++ `CREATE (plr:player {name: "Nasir Hossain", YOB: 1991, POB: "Rangpur City"})`
+
++ `MATCH (n:player {name: "Nasir Hossain", YOB: 1991, POB: "Rangpur City"}) REMOVE n.POB RETURN n`
+
+#### Removing a Label From a Node
++ `MATCH (node:label {properties . . . . . . . . . . .}) REMOVE node:label RETURN node`
+
++ `MATCH (n:player {name: "Nasir Hossain", YOB: 1991}) REMOVE n:player RETURN n;`
+
++ `MATCH (n:player {name: "Nasir Hossain", YOB: 1991}) REMOVE n: person:player RETURN n;`
+
++ Again set multiple label:
+`MATCH (n{name: "Nasir Hossain", YOB: 1991}) SET n: person:player RETURN n;`
+
+
+### Foreach Clause
++ The `FOREACH` clause is used to `update` data within a `list` whether components of a path, or result of aggregation.
+
++ `MATCH p = (start node)-[*]->(end node)
+WHERE start.node = "node_name" AND end.node = "node_name"
+FOREACH (n IN nodes(p)| SET n.marked = TRUE)`
