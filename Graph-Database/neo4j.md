@@ -1,3 +1,11 @@
++ Default login is username `'neo4j'` and password `'neo4j'`
+
+## Explore Sample Datasets
+Explore two sample datasets built into the Neo4j Browser using the following commands:
++ `:play movie graph`
++ `:play northwind graph`
++ `:play cypher`
+
 ### Creating Nodes
 + `CREATE (node_name);` Semicolon (;) is optional.
 
@@ -181,3 +189,9 @@ DELETE r,p`
 + `MATCH p = (start node)-[*]->(end node)
 WHERE start.node = "node_name" AND end.node = "node_name"
 FOREACH (n IN nodes(p)| SET n.marked = TRUE)`
+
+
+## Download
++ [1](https://neo4j.com/artifact.php?name=neo4j-desktop-1.0.2.dmg)
+
++ [2](https://neo4j.com/download-thanks/?edition=desktop&flavour=osx&release=1.0.2)
