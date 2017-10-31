@@ -190,6 +190,41 @@ DELETE r,p`
 WHERE start.node = "node_name" AND end.node = "node_name"
 FOREACH (n IN nodes(p)| SET n.marked = TRUE)`
 
++ `CREATE p = (Shakib {name:"Shakib AL Hasan"})-[:TOPSCORRER_OF]->(Ban{name:"Bangladesh"})-[:WINNER_OF]->(CT2013{name: "Champions Trophy 2013"}) RETURN p`
+
++ `MATCH p = (player)-[*]->(CT2013) WHERE player.name = "Shakib AL Hasan" AND CT2013.name="Champions Trophy 2013" FOREACH (n IN nodes(p)| SET n.marked = TRUE) RETURN p`
+
+### Match Clause
++ Match by Relationship: `MATCH (node:label)<-[: Relationship]-(n) RETURN n`
++ All Actors of The Matrix: `MATCH(mv:Movie {title:"The Matrix"})<-[ac:ACTED_IN]-(pr:Person) RETURN mv,ac, pr;`
++ You can delete all the nodes using the MATCH clause: `MATCH (n) detach delete n `
+
+### Optional Match Clause
++ The `OPTIONAL MATCH` clause is used to search for the pattern described in it, while using nulls for missing parts of the pattern.
+
++ `MATCH (node:label {properties. . . . . . }) OPTIONAL MATCH (node)-->(x) RETURN x`
+
++ This query is return all the relation of this Person:`MATCH(pr:Person {name:"Emil Eifrem"}) OPTIONAL MATCH(pr) -->(x) RETURN pr, x;`
+
++ `MATCH(pr:Person{name:"Cameron Crowe"}) OPTIONAL MATCH(pr) -->(x) RETURN pr,x;`
+
+### Where Clause
++ `MATCH (label) WHERE label.country = "property" RETURN label`
+
++ `MATCH (n) WHERE (n)-[:TOP_SCORER_OF]->( {name: "Bangladesh"}) RETURN n`
+
++ `MATCH (mv:Movie)<-[*]-(all) WHERE mv.title="Cloud Atlas" RETURN mv,all;`
+
++ `MATCH (mv:Movie {title:"Cloud Atlas"})<-[*]-(all)RETURN mv,all;`
+
+### Count Function
++ `MATCH(mv:Movie {title:"Cloud Atlas"})--(x) RETURN count(x) AS NumberOfRow;`
+#### Group Count
++ The COUNT clause is also used to count the `groups of relationship types`.
+
++ `MATCH(mv:Movie {title:"Cloud Atlas"})-[r]-(x) RETURN type(r) AS Relationship, count(x) AS NumberOfRow;`
+
+### Return Clause
 
 ## Download
 + [1](https://neo4j.com/artifact.php?name=neo4j-desktop-1.0.2.dmg)
