@@ -2,6 +2,7 @@
 
 ## Explore Sample Datasets
 Explore two sample datasets built into the Neo4j Browser using the following commands:
++ `:help`
 + `:play movie graph`
 + `:play northwind graph`
 + `:play cypher`
@@ -226,7 +227,9 @@ FOREACH (n IN nodes(p)| SET n.marked = TRUE)`
 
 ### Return Clause
 
-## Download
-+ [1](https://neo4j.com/artifact.php?name=neo4j-desktop-1.0.2.dmg)
+## References
++ [Download 1](https://neo4j.com/artifact.php?name=neo4j-desktop-1.0.2.dmg)
 
-+ [2](https://neo4j.com/download-thanks/?edition=desktop&flavour=osx&release=1.0.2)
++ [Download 2](https://neo4j.com/download-thanks/?edition=desktop&flavour=osx&release=1.0.2)
+
++ [Developer Manual](http://neo4j.com/docs/developer-manual/3.2/introduction/)
