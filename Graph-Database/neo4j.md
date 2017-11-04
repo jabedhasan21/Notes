@@ -226,6 +226,17 @@ FOREACH (n IN nodes(p)| SET n.marked = TRUE)`
 + `MATCH(mv:Movie {title:"Cloud Atlas"})-[r]-(x) RETURN type(r) AS Relationship, count(x) AS NumberOfRow;`
 
 ### Return Clause
++ The RETURN clause is used return nodes, relationships, and properties
++ Returning All Elements: `MATCH (mv:Movie {title:"Cloud Atlas"})<-[r]-(n) RETURN *;`
+
+### Order By Clause
++ `MATCH (n) RETURN n.property1, n.property2 . . . ORDER BY n.property`
+
++ `MATCH( mv:Movie ) RETURN mv.title, mv.released ORDER BY mv.released;`
+
++ Ordering Nodes by Multiple Properties: `MATCH (n) RETURN n ORDER BY n.age, n.name;`
+
++ `MATCH( mv:Movie ) RETURN mv.title, mv.released ORDER BY mv.released DESC, mv.title;`
 
 ### Limit Clause
 
