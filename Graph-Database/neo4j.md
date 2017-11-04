@@ -227,6 +227,194 @@ FOREACH (n IN nodes(p)| SET n.marked = TRUE)`
 
 ### Return Clause
 
+### Limit Clause
+
+### Skip Clause
+
+### With Clause
++ You can `chain` the query arts together using the `WITH` clause.
++ `MATCH (n) WITH n ORDER BY n.property RETURN collect(n.property)`
+
+### Unwind Clause
++ The `unwind` clause is used to `unwind a list` into a `sequence of rows`.
+
++ `UNWIND [a, b, c, d] AS x RETURN x`
+
++ One common usage of unwind is to create `distinct lists`.
+
++ Another is to create data from parameter lists that are provided to the query.
+
++ `UNWIND` requires you to `specify a new name` for the `inner values`.
+
+##### Create a distinct list
++ We want to transform a list of duplicates into a set using `DISTINCT`.
+
++ `WITH [1, 1, 2, 2] AS coll UNWIND coll AS x WITH DISTINCT x RETURN collect(x) AS SET`
++ Result:
+    ```
+    +-------+
+    | set   |
+    +-------+
+    | [1,2] |
+    +-------+
+     1 row
+  ```
+
+#### Create nodes from a list parameter
++ Create a number of nodes and relationships from a parameter-list without using `FOREACH`.
+
++ Parameters:
+```
+{
+  "events" : [ {
+    "year" : 2014,
+    "id" : 1
+  }, {
+    "year" : 2014,
+    "id" : 2
+  } ]
+}
+```
++ Query:
+```
+UNWIND $events AS event
+ MERGE (y:Year { year: event.year })
+ MERGE (y)<-[:IN]-(e:Event { id: event.id })
+ RETURN e.id AS x ORDER BY x
+ ```
+ ## Function
+ ###  String Functions
+
+ + [Functions String](https://neo4j.com/docs/developer-manual/current/cypher/functions/string/).
+
+ + Like SQL, Neo4J CQL has provided a set of String functions to use them in CQL Queries to get the required results.
+
+ + Following is the list of prominent String functions in Neo4j.
+   - `UPPER` : It is used to change all letters into upper case letters.
+
+   - `MATCH (n:player) RETURN UPPER(n.name), n.YOB, n.POB`
+
+   - `LOWER` : `MATCH (n:player) RETURN LOWER(n.name), n.YOB, n.POB`
+
+   - `SUBSTRING`: It takes a string as an input and `two indexes`: one is the `start of the index` and another is the `end of the index` and returns a substring from Start Index to End Index-1.
+
+   - `MATCH (n:player) RETURN SUBSTRING(n.name,0,5), n.YOB, n.POB`
+
+   - `Replace`: It is used to replace a `substring` with a `given substring` of a String.
+
+ ### Aggregation Function
+ + Like SQL, Neo4j CQL has provided some aggregation functions to use in RETURN clause. It is similar to `GROUP BY` clause in SQL.
+
+ + `COUNT`: It returns the `number of rows` returned by MATCH command.
+
+ + `MATCH (n:employee) WHERE n.sal>27000 RETURN COUNT(n)`
+
+ + `MAX`: It returns the `maximum value` from a set of rows returned by MATCH command.
+
+ + `MATCH (n:employee) RETURN MAX(n.sal)`
+
+ + `MIN`: `MATCH (n:employee) RETURN MIN(n.sal)`
+
+ + `SUM`: `MATCH (n:employee) RETURN SUM(n.sal)`
+
+ + `AVG`: `MATCH (n:employee) RETURN AVG(n.sal)`
+
+## Backup & Restore
+## Index
++ Neo4j SQL supports Indexes on `node` or `relationship properties` to improve the performance of the application.
+
++ We can create indexes on `properties for all nodes`, which have the `same label name`.
+
++ We can use these indexed columns on `MATCH` or `WHERE` or `IN` operator to improve the execution of CQL command.
+
++ Creating an Index: `CREATE INDEX ON:label (node)`
+
++ `CREATE (Shakib:player{name: "Shakib Al Hasan", YOB: 1995, POB: "Magura"})`
+
++ `CREATE INDEX ON:player(Shakib)`
+
++ Deleting an Index: `DROP INDEX ON:player(Shakib)`
+
+#### Create Unique Constraint
++ UNIQUE constraint is used to avoid duplicate records and to enforce data integrity rule.
+
++ Neo4j CQL provides `CREATE CONSTRAINT` command to create unique constraints on node or relationship properties.
+
+
++ `CREATE (Shakib:player{id:001,name: "Shakib Al Hasan", YOB: 1995, POB: "Magura"})`
+
++ `CREATE CONSTRAINT ON (n:player) ASSERT n.id IS UNIQUE`
+
++ Verification: `CREATE (Shakib:player{id:001,name: "Shakib Al Hasan", YOB: 1995, POB: "Magura"})`
+
+#### Drop Unique
++ Neo4j CQL provides `DROP CONSTRAINT` command to delete existing Unique constraint from a node or relationship property.
+
++ `DROP CONSTRAINT ON (node:label) ASSERT node.id IS UNIQUE`
+
++ `DROP CONSTRAINT ON (n:player) ASSERT n.id IS UNIQUE`
+
+# Quick Guide
+## Overview
++ Neo4j is the world's leading open source Graph Database which is developed using `Java technology`.
+
++ It is `highly scalable` and `schema free (NoSQL)`.
+
++ What is a Graph Database?
+  - A graph is a pictorial representation of a `set of objects` where some pairs of objects are connected by links.
+
+  - It is composed of two elements - `nodes (vertices)` and `relationships (edges)`.
+
+  - the `nodes` of a graph depict the `entities`
+  - while the `relationships` depict the `association` of these nodes.
+
+
++ Why Graph Databases?
+ - Nowadays, most of the `data exists` in the form of the `relationship` between different objects and more often.
+
+ - the `relationship` between the data is `more valuable` than the `data itself`.
+
+ - Relational databases store `highly structured data` which have several records storing the `same type of data` so they can be used to store structured data and, they `do not store the relationships` between the data.
+ - Unlike other databases, graph databases `store relationships` and `connections` as `first-class entities`.
+
+ #### Advantages of Neo4j
+
+  + `Flexible data model`: which can be `easily changed` according to the applications and industries.
+
+  + `No joins`: it does NOT require `complex joins` to retrieve connected/related data as it is very easy to retrieve its adjacent node or relationship details without `joins or indexes`.
+
+  + `Real-time insights`: provides results based on real-time data.
+
+  + `High availability`: highly available for `large enterprise real-time applications` with transactional guarantees.
+
+  + `Connected and semi structures data`: can easily represent connected and semi-structured data.
+
+  + `Easy retrieval`: easily retrieve (traverse/navigate) connected data faster when compared to other databases.
+
+  + `Cypher query language`: provides a `declarative query language` to represent the graph visually, using an `ascii-art syntax`. The commands of this language are in human readable format and very easy to learn.
+
+ #### Features of Neo4j
++ Neo4j uses Native `GPE` (`Graph Processing Engine`) to work with its Native graph storage format.
+
++ The main building blocks of Graph DB Data Model are −
+  - Nodes
+  - Relationships
+  - Properties
+  - Labels
+  - Data Browser
+
+### Labels
++ Label associates a `common name` to a set of nodes or relationships.
+
++ A node or relationship can contain one or more labels.
+
++ We can create new labels to existing nodes or relationships.
+
++ We can remove the existing labels from the existing nodes or relationships.
+
++ Relationship between those two nodes also has a Label: ex. `WORKS_FOR`.
+
+`Note` − Neo4j stores data in `Properties` of Nodes or Relationships.
 ## References
 + [Download 1](https://neo4j.com/artifact.php?name=neo4j-desktop-1.0.2.dmg)
 
