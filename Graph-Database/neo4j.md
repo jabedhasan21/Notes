@@ -152,9 +152,11 @@ Explore two sample datasets built into the Neo4j Browser using the following com
 
 + Assuming you're referring to Neo4j's internal node id:
 
-+ `MATCH (p:player) where ID(p)=28
-OPTIONAL MATCH (p)-[r]-() //drops p's relations
-DELETE r,p`
++ ```
+  MATCH (p:player) where ID(p)=28
+  OPTIONAL MATCH (p)-[r]-() //drops p's relations
+  DELETE r,p
+```
 
 + `MATCH(n) WHERE ID(n) = 27 RETURN n;`
 
