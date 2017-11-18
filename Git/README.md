@@ -34,6 +34,7 @@
 
 + To set your GPG signing key in Git:
  `$ git config --global user.signingkey 365F613EF4097A0A`
- 
+
++ If you aren't using the GPG suite, paste the text below to add the GPG key to your bash profile: `echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile`
 
 That's It. :)
