@@ -32,4 +32,8 @@
 
 + Now copy the whole output including `-----BEGIN PGP PUBLIC KEY BLOCK-----` text and add this Key in your github account.
 
++ To set your GPG signing key in Git:
+ `$ git config --global user.signingkey 365F613EF4097A0A`
+ 
+
 That's It. :)
