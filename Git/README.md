@@ -18,15 +18,15 @@
 
 + From the list of GPG keys, copy the GPG key ID you'd like to use. In this example, the GPG key ID is `365F613EF4097A0A`: inside the `sec`
 
-```
-$ gpg2 --list-secret-key --keyid-format LONG
-/Users/jabed/.gnupg/pubring.kbx
--------------------------------
-sec   rsa2048/365F613EF4097A0A 2017-11-18 [SC] [expires: 2019-11-18]
-      1E9C3EBB9B79739C882BD8D1365F613EF4097A0A
-uid                 [ultimate] Jabed Bangali <jabedhasan21@yahoo.com>
-ssb   rsa2048/0CD2B44C210EE4F5 2017-11-18 [E] [expires: 2019-11-18]
-```
+  ```
+  $ gpg2 --list-secret-key --keyid-format LONG
+  /Users/jabed/.gnupg/pubring.kbx
+  -------------------------------
+  sec   rsa2048/365F613EF4097A0A 2017-11-18 [SC] [expires: 2019-11-18]
+        1E9C3EBB9B79739C882BD8D1365F613EF4097A0A
+  uid                 [ultimate] Jabed Bangali <jabedhasan21@yahoo.com>
+  ssb   rsa2048/0CD2B44C210EE4F5 2017-11-18 [E] [expires: 2019-11-18]
+  ```
 
 + To Prints the GPG key ID, in ASCII armor format: `gpg --armor --export 365F613EF4097A0A`
 
