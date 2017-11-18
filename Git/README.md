@@ -5,6 +5,8 @@
 
 + `git checkout -- /directory/file_name OR /directory/.*`
 
+# Signing commits with GPG
++ [github](https://help.github.com/articles/signing-commits-with-gpg/)
 ## Generate GPG key
 + **Note:** Some GPG installations on Linux may require you to use `gpg2 --list-keys --keyid-format LONG` to view a list of your existing keys instead.
 
@@ -36,5 +38,9 @@
  `$ git config --global user.signingkey 365F613EF4097A0A`
 
 + If you aren't using the GPG suite, paste the text below to add the GPG key to your bash profile: `echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile`
+
++ Signing commits using GPG: `$ git commit -S -m your commit message`
+
++ After you create your commit, provide the passphrase you set up when you generated your GPG key.
 
 That's It. :)
