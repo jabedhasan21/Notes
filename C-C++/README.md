@@ -22,6 +22,12 @@
     vptr is a pointer to vtable. It is maintained per object (See this for an example).
     Compiler adds additional code at two places to maintain and use vtable and vptr.
 
+### Code Compile
++ ##### On Mac OS X :
+    - `gcc -Wall -o program program.c`
+
+    - `clang program.c -o program`
+
 # Reference
 (1). [Toptal](http://www.toptal.com/c-plus-plus/interview-questions)
 
