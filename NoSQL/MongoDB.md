@@ -34,3 +34,12 @@ Replication is the process of synchronizing data across multiple servers.
 
 ## Sharding
 Sharding is the process of storing data records across multiple machines.
+
+# Utils
++ `mongodump --collection <collection-name> --db <db-name> --username mongodevdb --password YourSecretPwd`
+
+
++ `mongodump --host <IP> --port <port-number>  --collection <collection-name> --db <db-name> --out <output-directory-path>`
+
+
++ `mongorestore --collection <collection-name> --db <db-name> path-to/file.bson`
