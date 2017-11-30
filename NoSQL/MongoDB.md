@@ -44,8 +44,11 @@ Sharding is the process of storing data records across multiple machines.
 
 + `mongorestore --collection <collection-name> --db <db-name> path-to/file.bson`
 
++ `sudo mongorestore --db <database-name> --drop <path-to-existing-backup-data>`
+
 # Install
 + [ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-16-04)
 
 # References
 + [mongodb-auth](https://ianlondon.github.io/blog/mongodb-auth/)
++ [back-up-restore-and-migrate](https://www.digitalocean.com/community/tutorials/how-to-back-up-restore-and-migrate-a-mongodb-database-on-ubuntu-14-04)
