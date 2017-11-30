@@ -428,7 +428,12 @@ UNWIND $events AS event
 + Relationship between those two nodes also has a Label: ex. `WORKS_FOR`.
 
 `Note` − Neo4j stores data in `Properties` of Nodes or Relationships.
-## References
+
+# Install
++ [ubuntu 16.04](http://www.exegetic.biz/blog/2016/09/installing-neo4j-ubuntu-16-04/)
++ [ubuntu vps](https://www.digitalocean.com/community/tutorials/how-to-install-neo4j-on-an-ubuntu-vps)
+
+# References
 + [Download 1](https://neo4j.com/artifact.php?name=neo4j-desktop-1.0.2.dmg)
 
 + [Download 2](https://neo4j.com/download-thanks/?edition=desktop&flavour=osx&release=1.0.2)
