@@ -264,3 +264,5 @@ Q 34 - What is a thread in android?
 (6). [**Quora**](https://www.quora.com/What-are-some-good-questions-to-test-someones-Android-development-skills)
 
 (7). [**100 Android Questions And Answers**](http://100androidquestionsandanswers.com/)
+
+(8).[Antonio Leiva](https://github.com/antoniolg)
