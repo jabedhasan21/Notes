@@ -429,6 +429,9 @@ UNWIND $events AS event
 
 `Note` − Neo4j stores data in `Properties` of Nodes or Relationships.
 
+## Utils
++ Cypher Shell Login: `/cypher-shell -u <user> -p <password>`
+
 # Install
 + [ubuntu 16.04](http://www.exegetic.biz/blog/2016/09/installing-neo4j-ubuntu-16-04/)
 + [ubuntu vps](https://www.digitalocean.com/community/tutorials/how-to-install-neo4j-on-an-ubuntu-vps)
