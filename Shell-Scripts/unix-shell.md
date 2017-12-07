@@ -211,3 +211,47 @@ Variable substitution `enables` the shell programmer to `manipulate the value of
 + `${var:?message}`: If var is `null or unset`, message is printed to standard error. This `checks that variables are set correctly`.
 
 ### Quoting Mechanisms
++ **The Metacharacters :** Unix Shell provides various metacharacters which have special meaning while using them in any Shell Script and causes termination of a word unless quoted.
+
++ For example, `?` matches with a single character while listing files in a directory and an `*` matches more than one character.
+
++ Here is a list of most of the shell special characters (also called `metacharacters`) :
+ `* ? [ ] ' " \ $ ; & ( ) | ^ < > new-line space tab`
+
++ A character may be quoted (i.e., made to stand for itself) by preceding it with a `\`.
+
++ `echo Hello; Word` : this execution will not show the expected result.
+
++ But this `echo Hello\; Word` will show expected result for the `Back slash \`
+
+
+##### Quoting & Description
++ **Single quote : (' '):** All special characters between these quotes lose their special meaning.
+
+ + `echo <-$1500.**>; (update?) [y|n]` This will show  parse error.
+
+ + Putting a backslash in front of each special character is tedious and makes the line difficult to read. Like: `echo \<-\$1500.\*\*\>\; \(update\?\) \[y\|n\]`
+
+ + There is an easy way to quote a large group of characters. Put a single quote (') at the beginning and at the end of the string −  `echo '<-$1500.**>; (update?) [y|n]'`
+
+ + If a single quote appears within a string to be output, you should not put the whole string within single quotes instead you should precede that using a backslash (\) as follows − `echo It\'s Shell Programming`
+
++ **Double quote : ( " " ):** Most special characters between these quotes lose their special meaning with these exceptions - `$`  `\$` `\'` `\"`  `\\` and **`**
+ + Try to execute the following shell script. This shell script makes use of single quote −
+ ```
+ VAR=ZARA
+ echo '$VAR owes <-$1500.**>; [ as of (`date +%m/%d`) ]'
+ ```
+ + Upon execution, you will receive the following result − ```$VAR owes <-$1500.**>; [ as of (`date +%m/%d`) ]```
+
+ + This is not what had to be displayed. It is obvious that single quotes prevent variable substitution. If you want to substitute variable values and to make inverted commas work as expected, then you would need to put your commands in double quotes as follows −
+ ```
+ VAR=ZARA
+echo "$VAR owes <-\$1500.**>; [ as of (`date +%m/%d`) ]"
+```
++ **Backquotes:** Putting any Shell command in between backquotes executes the command.
+```
+DATE=`date`
+echo "Current Date: $DATE"
+```
+### Shell Input/Output I/O Redirections
