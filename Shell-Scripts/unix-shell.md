@@ -255,3 +255,30 @@ DATE=`date`
 echo "Current Date: $DATE"
 ```
 ### Shell Input/Output I/O Redirections
++ **Output Redirection:** The output from a command normally intended for standard output can be easily diverted to a file instead. This capability is known as output redirection.
+
+  If the notation `>` file is appended to any command that normally writes its output to standard output, the output of that command will be written to file instead of your terminal.
+
+  + `$ who > users`
+
+  + You can use `>>` operator to append the output in an existing file as follows: `echo line 2 >> users`
++ **Input Redirection:** Just as the output of a command can be redirected to a file, so can the input of a command be redirected from a file. As the **greater-than character** `>` is used for output redirection, the **less-than character** `<` is used to redirect the input of a command.
+
+  The commands that normally take their input from the standard input can have their input redirected from a file in this manner. For example, to count the number of lines in the file users generated above, you can execute the command as follows −
+  ```
+  $ wc -l users
+  2 users
+  ```
+
+  Upon execution, you will receive the following output. You can count the number of lines in the file by redirecting the standard input of the wc command from the file users −
+  ```
+  $ wc -l < users
+  2
+  ```
+
+  Note that there is a difference in the output produced by the two forms of the `wc` command. In the first case, the name of the file users is listed with the line count; in the second case, it is not.
+
+  In the first case, wc knows that it is reading its input from the file users. In the second case, it only knows that it is reading its input from standard input so it does not display file name.
+
+
++ **Here Document:**
