@@ -1,3 +1,21 @@
+# Cheat Sheet
++ To show only commits of an individual file: `git log -- <file>`
+
++ To show commits of the particular file with diffs for each change: `git log -p -- <file>`
+
++ Show the entire history of a file (including history beyond renames): `git log --follow -p -- <file>`
+
++ One of the more helpful options is `-p` or `--patch`, which shows the difference (the patch output) introduced in each commit. You can also limit the number of log entries displayed, such as using `-2` to show only the last two entries: `git log -p -2`
+
++ If you want to see some abbreviated stats for each commit, you can use the --stat option: `git log --stat`. How many files were changed, and how many lines in those files were added and removed. It also puts a summary of the information at the end.
+
++ The `oneline` option prints each commit on a single line, which is useful if you’re looking at a lot of commits:`git log --pretty=oneline`
+
++ The most interesting option is `format`, which allows you to specify your own log output format: `git log --pretty=format:"%h -%an, %ar: %s"`
+ Out Put: `c4f106c -Jabed Bangali, 3 hours ago: :sparkles: New Site Notification Account`
+
++ [Git-Basics-Viewing-the-Commit-History](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
+
 ## Git recover deleted file where no commit was made after the delete
 + `git config alias.unstage`
 
