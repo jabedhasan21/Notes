@@ -72,3 +72,11 @@ To enable automatically starting Neo4j when the system starts.
 `sudo systemctl enable neo4j`
 
 The Neo4j server now configured and running, and you can manage the Neo4j service using the systemctl command (e.g. `sudo systemctl neo4j stop`, `sudo systemctl neo4j start/status`)
+
++ Set initial password: `neo4j-admin set-initial-password <password>`
+
++ To `cypher-shell` logging need to enable `bolt`
+**Bolt connector:**
+`dbms.connector.bolt.enabled=true`
+
++ [connectors](https://neo4j.com/docs/operations-manual/current/configuration/connectors/)

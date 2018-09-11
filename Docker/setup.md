@@ -268,7 +268,25 @@ The `pull` command fetches the alpine image from the Docker registry and saves i
 
 + Get the IP of node1 `docker-machine ip node1` (⇒ 192.168.99.100)
 
+# All command
+``` docker-machine start myvm1
+ docker-machine env myvm1
+ eval $(docker-machine env myvm1)
 
+docker-machine ssh myvm1 "docker swarm init --advertise-addr 192.168.99.100"
+
+
+Need to join a worker node in swarm: 
+docker swarm join --token SWMTKN-1-4y0sw35m2g90r5viqycogfm20p6dv1vg0f1tl6omythjgwn4tq-aepaw7v4ze6aw4x7xhdx8cflz 192.168.99.100:2377
+
+
+In manager node: docker node ls
+
+docker-machine ls
+
+
+docker stack deploy -c docker-sample-composer.yml test
+```
 
 ## References
 + [Docker For Mac](https://docs.docker.com/docker-for-mac/#explore-the-application-and-run-examples)

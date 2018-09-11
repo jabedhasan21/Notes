@@ -209,16 +209,16 @@ FOREACH (n IN nodes(p)| SET n.marked = TRUE)`
 
 + This query is return all the relation of this Person:`MATCH(pr:Person {name:"Emil Eifrem"}) OPTIONAL MATCH(pr) -->(x) RETURN pr, x;`
 
-+ `MATCH(pr:Person{name:"Cameron Crowe"}) OPTIONAL MATCH(pr) -->(x) RETURN pr,x;`
++ `MATCH(pr:Person{name:"Cameron Crowe"}) OPTIONAL MATCH(pr) -->(x) RETURN pr, x;`
 
 ### Where Clause
 + `MATCH (label) WHERE label.country = "property" RETURN label`
 
 + `MATCH (n) WHERE (n)-[:TOP_SCORER_OF]->( {name: "Bangladesh"}) RETURN n`
 
-+ `MATCH (mv:Movie)<-[*]-(all) WHERE mv.title="Cloud Atlas" RETURN mv,all;`
++ `MATCH (mv:Movie)<-[*]-(all) WHERE mv.title="Cloud Atlas" RETURN mv, all;`
 
-+ `MATCH (mv:Movie {title:"Cloud Atlas"})<-[*]-(all)RETURN mv,all;`
++ `MATCH (mv:Movie {title:"Cloud Atlas"})<-[*]-(all)RETURN mv, all;`
 
 ### Count Function
 + `MATCH(mv:Movie {title:"Cloud Atlas"})--(x) RETURN count(x) AS NumberOfRow;`
