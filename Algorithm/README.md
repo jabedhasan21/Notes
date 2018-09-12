@@ -12,6 +12,8 @@
 
 ## Bubble Sort
 
+## **Insertion Sort**
+
 ## References
 + [visualgo](https://visualgo.net/en)
 
