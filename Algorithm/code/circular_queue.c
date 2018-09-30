@@ -27,9 +27,9 @@ int dequeue(Queue *q) {
     return item;
 }
 
-void show(Queue *q) {
+void displayQueue(Queue *q) {
     int i;
-    printf("Show Queue: ");
+    printf("Elements in Circular Queue are: ");
     if (q->head == q->tail) {
         printf("Empty!\n");
         return;
@@ -85,7 +85,7 @@ int main(int argc, char const *argv[])
     printf("Queue length = %d\n", length(&my_q));
     enqueue(&my_q, 17);
 
-    show(&my_q);
+    displayQueue(&my_q);
     printf("\nBeginning head = %d\n", my_q.head);
     printf("Queue length = %d\n", length(&my_q));
 
@@ -102,7 +102,7 @@ int main(int argc, char const *argv[])
     printf("\nitem = %d, head = %d\n",dequeue(&my_q), my_q.head);
     printf("Queue length = %d\n", length(&my_q));
 
-    show(&my_q);
+    displayQueue(&my_q);
 
     printf("\nHead = %d\n", my_q.head);
     printf("Tail = %d\n", my_q.tail);
@@ -110,26 +110,26 @@ int main(int argc, char const *argv[])
     enqueue(&my_q, 3);
     enqueue(&my_q, 5);
     enqueue(&my_q, 66);
-    show(&my_q);
+    displayQueue(&my_q);
     printf("\nHead = %d\n", my_q.head);
     printf("Tail = %d\n", my_q.tail);
     printf("\nitem = %d, head = %d\n",dequeue(&my_q), my_q.head);
     printf("\nitem = %d, head = %d\n",dequeue(&my_q), my_q.head);
-    show(&my_q);
+    displayQueue(&my_q);
     enqueue(&my_q, 77);
     enqueue(&my_q, 33);
     enqueue(&my_q, 43);
-    show(&my_q);
+    displayQueue(&my_q);
 
     printf("\nHead = %d\n", my_q.head);
     printf("\nTail = %d\n", my_q.tail);
     printf("\nitem = %d, head = %d\n",dequeue(&my_q), my_q.head);
     printf("\nitem = %d, head = %d\n",dequeue(&my_q), my_q.head);
-    show(&my_q);
+    displayQueue(&my_q);
     enqueue(&my_q, 22);
     printf("\nHead = %d\n", my_q.head);
     printf("\nTail = %d\n", my_q.tail);
-    show(&my_q);
+    displayQueue(&my_q);
     printf("Queue length = %d\n", length(&my_q));
     printf("\n");
     return 0;
