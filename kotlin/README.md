@@ -1,3 +1,6 @@
++ Just run this on your terminal: `kotlinc filename.kt -include-runtime -d filename.jar && java -jar filename.jar`
+
+
 # References
 + [kotlin](https://github.com/JetBrains/kotlin)
 
