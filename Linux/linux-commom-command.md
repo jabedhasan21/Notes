@@ -34,5 +34,8 @@ tail -f /var/log/nginx/* /var/log/php*
 
 +  To find all files greater than 10 MB (10 MB is a big enough file size, you can choose +1M for 1MB similarly): `sudo find / -type f -size +10M -exec ls -lh {} \;`
 
+
+# Networking
++ Get IPS IP: `curl ifconfig.pro` 
 ### linux-commands
 ![1](linux-commands.png)
