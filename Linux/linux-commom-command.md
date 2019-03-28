@@ -34,8 +34,13 @@ tail -f /var/log/nginx/* /var/log/php*
 
 +  To find all files greater than 10 MB (10 MB is a big enough file size, you can choose +1M for 1MB similarly): `sudo find / -type f -size +10M -exec ls -lh {} \;`
 
+# Unix
++ Show service file path: `systemctl show cron.service | grep Path`
++ Specific users can also create cron jobs. User-specific cron jobs are located in `/var/spool/cron/username`.
++ [ubuntu-crontab](https://www.rosehosting.com/blog/ubuntu-crontab/)
 
 # Networking
-+ Get IPS IP: `curl ifconfig.pro` 
++ Get IPS IP: `curl ifconfig.pro`
+
 ### linux-commands
 ![1](linux-commands.png)
