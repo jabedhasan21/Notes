@@ -62,3 +62,5 @@
 + After you create your commit, provide the passphrase you set up when you generated your GPG key.
 
 That's It. :)
+
+# References
