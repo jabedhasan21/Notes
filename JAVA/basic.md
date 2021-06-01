@@ -12,6 +12,16 @@
  + Enterprise Application.
  + Mobile Application.( Android and Java ME are used for creating mobile applications )
 
+## [The Java Programming Language Platforms](https://docs.oracle.com/cd/E19798-01/821-1770/gcrkk/index.html)
+There are four platforms of the Java programming language:
++ Java Platform, Standard Edition (Java SE)
++ Java Platform, Enterprise Edition (Java EE)
++ Java Platform, Micro Edition (Java ME)
+    - [Whay Java ME Dead](https://stackoverflow.com/questions/26563100/is-jme-still-alive)
++ Java FX
+
+### [Java Enterprise Evolution](https://www.baeldung.com/java-enterprise-evolution)
+
 ### Java Platform Independent?
  A platform is the hardware or software environment in which a program runs.
 
