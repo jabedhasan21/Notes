@@ -7,3 +7,5 @@
 + SideCar
 
 + Istio + Envoy(act as a SideCar)
+
++ [Mastering Chaos - A Netflix Guide to Microservices](https://www.youtube.com/watch?v=CZ3wIuvmHeM)
