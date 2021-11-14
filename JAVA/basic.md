@@ -32,12 +32,12 @@ There are four platforms of the Java programming language:
 + API(Application Programming Interface)
 
 ### What happens at runtime?
-**1.** class file.
-**2.** Classloader.
-**3.** Bytecode Verifier.
-**4.** Interpreter.
-**5.** Runtime.
-**6.** Hardware.
+1. class file.
+2. Classloader.
+3. Bytecode Verifier.
+4. Interpreter.
+5. Runtime.
+6. Hardware.
 
 ### Question
 ---
@@ -52,7 +52,7 @@ It is an abstract machine. It is a specification that provides runtime environme
  + **JRE( Java Runtime Environment ):**
 It is the implementation of JVM. It physically exists. It contains set of libraries + other files that JVM uses at runtime.
  + **JDK( Java Development Kit ):**
-It physically exists.It contains JRE + development tools e.g.(javac, java etc).
+It physically exists. It contains JRE + development tools e.g.(javac, java etc).
 
 ### Internal Architecture of JVM?
 + Classloader

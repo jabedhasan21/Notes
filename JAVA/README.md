@@ -1,12 +1,12 @@
 # Java
-What are the principle conscepts od OOPS?
+What are the principle conscepts of OOPS?
 
  There are four principle conscepts upon which object oriented design and programming rest. They are:
 
-    + Abstraction
-    + Polymorphism
-    + Inheritance
-    + Encapsulation.
+   * Abstraction
+   * Polymorphism
+   * Inheritance
+   * Encapsulation.
 
 # Inheritance
 Inheritance can be defined as the process where one class acquires the properties (methods and fields) of another. With the use of inheritance the information is made manageable in a hierarchical order.
