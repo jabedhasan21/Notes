@@ -4,6 +4,8 @@
 + `docker-compose --version`
 + `docker-machine --version`
 + You can check whether you are running experimental mode or not by typing `docker version` on the command line. Experimental mode is listed under `Server` data. If `Experimental` is `true`, then Docker is running in experimental mode, as shown here. (If `false`, Experimental mode is off.)
++ access docker container: `docker exec -it <mycontainer> bash or sh`
+
 
 # Get Started.
 ### Part 1: Orientation and setup

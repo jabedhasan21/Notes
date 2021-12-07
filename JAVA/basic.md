@@ -73,3 +73,16 @@ It physically exists. It contains JRE + development tools e.g.(javac, java etc).
 ###  Java static block?
 + Is used to initialize the static data member.
 + It is executed before main method at the time of classloading.
+
+### exception vs error in java
+* Errors should not be caught or handled (except in the rarest of cases).
+* An Error is a subclass of Throwable that indicates serious problems that a reasonable application should not try to catch. Most such errors are abnormal conditions.
+* An Error "indicates serious problems that a reasonable application should not try to catch."
+* An Exception "indicates conditions that a reasonable application might want to catch."
+
+
+* https://stackoverflow.com/questions/5813614/what-is-difference-between-errors-and-exceptions
+* https://stackoverflow.com/questions/912334/differences-between-exception-and-error
+* https://docs.oracle.com/javase/6/docs/api/java/lang/Error.html
+* https://techdifferences.com/difference-between-error-and-exception.html
+* https://www.geeksforgeeks.org/errors-v-s-exceptions-in-java/
