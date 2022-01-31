@@ -4,6 +4,7 @@
  + [**TutorialsPoint**](http://www.tutorialspoint.com/design_pattern/observer_pattern.htm)
 
  + [**solid-principles**](https://www.baeldung.com/solid-principles)
+    + https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
 
  + [**solid-principles-Ex**](SOLID Design Principles)
 
@@ -37,7 +38,11 @@ This pattern creates a decorator class which wraps the original class and provid
 
 (4). **Strategy( behavior pattern )**
 
-*In Strategy pattern, a class behavior or its algorithm can be changed at run time.*
+* In Strategy pattern, a class behavior or its algorithm can be changed at run time.
+* Usages: 
+   * Shopping Cart
+      * PaymentMethod: Visa/MasterCard and Different types of Item can be added in Cart
+
 
 (5). **Adapter( structural pattern )**
 
