@@ -15,7 +15,11 @@ A byte usually consists of eight bits. Amounts of computer memory are often expr
 
 
 
-+  Difference between Abstraction and Encapsulation?
++  [Difference between Abstraction and Encapsulation?](https://www.geeksforgeeks.org/difference-between-abstraction-and-encapsulation-in-java-with-examples/#:~:text=Abstraction%20is%20the%20method%20of,using%20abstract%20class%20and%20interfaces.)
+
+ * Abstraction is the method of hiding the unwanted information. Whereas encapsulation is a method to hide the data in a single entity or unit along with a method to protect information from outside. We can implement abstraction using abstract class and interfaces.
+ * 
+
 
 # Referances
 1.[javatpoint](http://www.javatpoint.com/corejava-interview-questions)
