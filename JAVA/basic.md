@@ -12,6 +12,16 @@
  + Enterprise Application.
  + Mobile Application.( Android and Java ME are used for creating mobile applications )
 
+## [The Java Programming Language Platforms](https://docs.oracle.com/cd/E19798-01/821-1770/gcrkk/index.html)
+There are four platforms of the Java programming language:
++ Java Platform, Standard Edition (Java SE)
++ Java Platform, Enterprise Edition (Java EE)
++ Java Platform, Micro Edition (Java ME)
+    - [Whay Java ME Dead](https://stackoverflow.com/questions/26563100/is-jme-still-alive)
++ Java FX
+
+### [Java Enterprise Evolution](https://www.baeldung.com/java-enterprise-evolution)
+
 ### Java Platform Independent?
  A platform is the hardware or software environment in which a program runs.
 
@@ -23,12 +33,12 @@
 + API(Application Programming Interface)
 
 ### What happens at runtime?
-**1.** class file.
-**2.** Classloader.
-**3.** Bytecode Verifier.
-**4.** Interpreter.
-**5.** Runtime.
-**6.** Hardware.
+1. class file.
+2. Classloader.
+3. Bytecode Verifier.
+4. Interpreter.
+5. Runtime.
+6. Hardware.
 
 ### Question
 ---
@@ -45,7 +55,7 @@ It is an abstract machine.
 It is the implementation of JVM. 
 It physically exists. It contains set of libraries + other files that JVM uses at runtime.
  + **JDK( Java Development Kit ):**
-It physically exists.It contains JRE + development tools e.g.(javac, java etc).
+It physically exists. It contains JRE + development tools e.g.(javac, java etc).
 
 ### Internal Architecture of JVM?
 + Classloader
@@ -66,3 +76,16 @@ It physically exists.It contains JRE + development tools e.g.(javac, java etc).
 ###  Java static block?
 + Is used to initialize the static data member.
 + It is executed before main method at the time of classloading.
+
+### exception vs error in java
+* Errors should not be caught or handled (except in the rarest of cases).
+* An Error is a subclass of Throwable that indicates serious problems that a reasonable application should not try to catch. Most such errors are abnormal conditions.
+* An Error "indicates serious problems that a reasonable application should not try to catch."
+* An Exception "indicates conditions that a reasonable application might want to catch."
+
+
+* https://stackoverflow.com/questions/5813614/what-is-difference-between-errors-and-exceptions
+* https://stackoverflow.com/questions/912334/differences-between-exception-and-error
+* https://docs.oracle.com/javase/6/docs/api/java/lang/Error.html
+* https://techdifferences.com/difference-between-error-and-exception.html
+* https://www.geeksforgeeks.org/errors-v-s-exceptions-in-java/
