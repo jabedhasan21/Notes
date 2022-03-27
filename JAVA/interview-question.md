@@ -22,4 +22,5 @@ A byte usually consists of eight bits. Amounts of computer memory are often expr
 
 
 # Referances
-1.[javatpoint](http://www.javatpoint.com/corejava-interview-questions)
+1. [javatpoint](http://www.javatpoint.com/corejava-interview-questions)
+2. [tech-interview-handbook](https://github.com/yangshun/tech-interview-handbook)
