@@ -27,7 +27,8 @@ There are four platforms of the Java programming language:
 
  There are two types of platforms software-based and hardware-based. Java provides software-based platform.
 
- The Java platform differs from most other platforms in the sense that it is a software-based platform that runs on the top of other hardware-based platforms. It has two components:
+ The Java platform differs from most other platforms in the sense that it is a software-based platform that runs on the top of other hardware-based platforms.
+  It has two components:
 + Runtime Environment
 + API(Application Programming Interface)
 
@@ -48,9 +49,11 @@ There are four platforms of the Java programming language:
 ----
 ### Difference between JDK, JRE and JVM?
  +  **JVM( Java Virtual Machine ):**
-It is an abstract machine. It is a specification that provides runtime environment in which java bytecode can be executed.
+It is an abstract machine.
+ It is a specification that provides runtime environment in which java bytecode can be executed.
  + **JRE( Java Runtime Environment ):**
-It is the implementation of JVM. It physically exists. It contains set of libraries + other files that JVM uses at runtime.
+It is the implementation of JVM. 
+It physically exists. It contains set of libraries + other files that JVM uses at runtime.
  + **JDK( Java Development Kit ):**
 It physically exists. It contains JRE + development tools e.g.(javac, java etc).
 
