@@ -1,7 +1,9 @@
 # Play Cypher
 
 ## Cypher
-Neo4j's graph query language
++ Cypher is Neo4j's graph query language.
++ Working with a graph is all about understanding patterns of data, which are central to Cypher queries.
++ Use `MATCH` clauses for reading data, and `CREATE` or `MERGE` for writing data.
 
 ## CREATE
 Create a node: `CREATE (ee:Person {name: "Emil", from: "Sweden", klout:99})`
@@ -49,3 +51,9 @@ RETURN js, surfer
 ## Analyze
 + Using the visual query plan
 + Understand how your query works by prepending `EXPLAIN` or `PROFILE`:
+
+
+
+
+# Reference
++ [Cypher-Manual](https://neo4j.com/docs/cypher-manual/current/)
