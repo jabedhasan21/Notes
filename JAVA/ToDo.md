@@ -18,3 +18,5 @@
 + [Adder and Accumulator](https://www.youtube.com/watch?v=_n7GOopfvWA)
 
 + [ReentrantLock - fairness, tryLock and more](https://youtu.be/ahBC69_iyk4?list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6)
+
++ Java framework Wicket.

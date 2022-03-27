@@ -1,7 +1,8 @@
 # Installation
 ###  On ubuntu 16.04
 #### Installing Java
-Neo4j is implemented in Java, so you’ll need to have the `Java` Runtime Environment (`JRE`) installed. If you already have this up and running, go ahead and skip this step.
+Neo4j is implemented in Java, so you’ll need to have the `Java` Runtime Environment (`JRE`) installed.
+If you already have this up and running, go ahead and skip this step.
 
 + `sudo apt install default-jre default-jre-headless`
 
@@ -13,15 +14,19 @@ First we’ll add the repository key to our keychain.
 
 Then add the repository to the list of apt sources.
 
-+ `echo 'deb http://debian.neo4j.org/repo stable/' | sudo tee /etc/apt/sources.list.d/neo4j.list`
++ `echo 'deb https://debian.neo4j.com stable latest' | sudo tee -a /etc/apt/sources.list.d/neo4j.list`
 
 Finally update the repository information and install Neo4j
+
++ Once the repository has been added into apt, you can verify which Neo4j versions are available by running: `apt list -a neo4j`
+
 ```
 sudo apt update
 sudo apt install neo4j
 ```
 
-The server should have started automatically and should also be restarted at boot. If necessary the server can be stopped with
+The server should have started automatically and should also be restarted at boot.
+If necessary the server can be stopped with
 
 `sudo service neo4j stop`
 
@@ -33,7 +38,8 @@ and restarted with
 #### Accessing Neo4j
 + You should now be able to access the database server via http://localhost:7474/browser/.
 
-+ Sometimes you may fetch  some problems logging in with the default username and password (`neo4j` and `neo4j`), but this was easily resolved by deleting the file `/var/lib/neo4j/data/dbms/auth` and restarting the server.
++ Sometimes you may fetch  some problems logging in with the default username and password (`neo4j` and `neo4j`),
+but this was easily resolved by deleting the file `/var/lib/neo4j/data/dbms/auth` and restarting the server.
 
 ####  Enable automatically starting Neo4j when the system starts.
 
