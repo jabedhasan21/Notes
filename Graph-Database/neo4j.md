@@ -51,7 +51,7 @@ Explore two sample datasets built into the Neo4j Browser using the following com
 
 + `MATCH (a:player), (b:Country) WHERE a.name = "Shakib Al Hasan" AND b.name = "Bangladesh" CREATE (a)-[r:BATSMAN_OF]->(b) RETURN a,b`
 
-+ List all bangladeshi players:`MATCH (a:player), (b:Country) WHERE  b.name = "Bangladesh" RETURN a,b;`
++ List all bangladeshi players: `MATCH (a:player), (b:Country) WHERE  b.name = "Bangladesh" RETURN a,b;`
 
 ### Creating a Relationship with Label and Properties
 + `CREATE (node1)-[label:Rel_Type {key1:value1, key2:value2, . . . n}]-> (node2)`
@@ -151,9 +151,9 @@ Explore two sample datasets built into the Neo4j Browser using the following com
 + `MATCH (plr:player {name: "Rubel Hossain", YOB: 1990, POB: "Bagerhat"}) DETACH DELETE plr`
 
 + Assuming you're referring to Neo4j's internal node id:
-
-+ ```
-  MATCH (p:player) where ID(p)=28
+ 
+```
+MATCH (p:player) where ID(p)=28
   OPTIONAL MATCH (p)-[r]-() //drops p's relations
   DELETE r,p
 ```
@@ -189,13 +189,18 @@ Explore two sample datasets built into the Neo4j Browser using the following com
 ### Foreach Clause
 + The `FOREACH` clause is used to `update` data within a `list` whether components of a path, or result of aggregation.
 
-+ `MATCH p = (start node)-[*]->(end node)
+```MATCH p = (start node)-[*]->(end node)
 WHERE start.node = "node_name" AND end.node = "node_name"
-FOREACH (n IN nodes(p)| SET n.marked = TRUE)`
+FOREACH (n IN nodes(p)| SET n.marked = TRUE)
+```
 
-+ `CREATE p = (Shakib {name:"Shakib AL Hasan"})-[:TOPSCORRER_OF]->(Ban{name:"Bangladesh"})-[:WINNER_OF]->(CT2013{name: "Champions Trophy 2013"}) RETURN p`
+```
+CREATE p = (Shakib {name:"Shakib AL Hasan"})-[:TOPSCORRER_OF]->(Ban{name:"Bangladesh"})-[:WINNER_OF]->(CT2013{name: "Champions Trophy 2013"}) RETURN p
+```
 
-+ `MATCH p = (player)-[*]->(CT2013) WHERE player.name = "Shakib AL Hasan" AND CT2013.name="Champions Trophy 2013" FOREACH (n IN nodes(p)| SET n.marked = TRUE) RETURN p`
+```
+MATCH p = (player)-[*]->(CT2013) WHERE player.name = "Shakib AL Hasan" AND CT2013.name="Champions Trophy 2013" FOREACH (n IN nodes(p)| SET n.marked = TRUE) RETURN p
+```
 
 ### Match Clause
 + Match by Relationship: `MATCH (node:label)<-[: Relationship]-(n) RETURN n`
