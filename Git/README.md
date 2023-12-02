@@ -25,6 +25,7 @@
 
 # Signing commits with GPG
 + [github](https://help.github.com/articles/signing-commits-with-gpg/)
++ [GPG Keys](https://youtu.be/xj9OiJL56pM)
 ## Generate GPG key
 + **Note:** Some GPG installations on Linux may require you to use `gpg2 --list-keys --keyid-format LONG` to view a list of your existing keys instead.
 
