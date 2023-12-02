@@ -64,4 +64,7 @@
 
 That's It. :)
 
+# 
++ [Multiple GitHub Accounts on the Same Mac](https://www.linkedin.com/pulse/multiple-github-accounts-same-mac-hesham-osama/)
+
 # References
